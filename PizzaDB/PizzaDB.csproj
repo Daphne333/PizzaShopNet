@@ -51,15 +51,29 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="OrderEntrySet.cs">
+      <DependentUpon>PizzaModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="OrderSet.cs">
+      <DependentUpon>PizzaModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="PizzaModel.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>PizzaModel.Context.tt</DependentUpon>
     </Compile>
+    <Compile Include="PizzaModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>PizzaModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="PizzaModel.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>PizzaModel.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="ProductSet.cs">
+      <DependentUpon>PizzaModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -79,6 +93,12 @@
     <Content Include="PizzaModel.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <LastGenOutput>PizzaModel.Context.cs</LastGenOutput>
+      <DependentUpon>PizzaModel.edmx</DependentUpon>
+    </Content>
+    <Content Include="PizzaModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>PizzaModel.edmx</DependentUpon>
+      <LastGenOutput>PizzaModel.cs</LastGenOutput>
     </Content>
   </ItemGroup>
   <ItemGroup>

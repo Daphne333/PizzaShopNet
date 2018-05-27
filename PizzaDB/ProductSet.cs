@@ -7,22 +7,22 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace WcfServiceLibrary1
+namespace PizzaDB
 {
     using System;
     using System.Collections.Generic;
     
-    public partial class OrderSet
+    public partial class ProductSet
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public OrderSet()
+        public ProductSet()
         {
             this.OrderEntrySet = new HashSet<OrderEntrySet>();
         }
     
         public int Id { get; set; }
-        public string CustName { get; set; }
-        public System.DateTime OrderDate { get; set; }
+        public string Name { get; set; }
+        public double Price { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<OrderEntrySet> OrderEntrySet { get; set; }

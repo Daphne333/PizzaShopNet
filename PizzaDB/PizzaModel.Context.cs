@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace WcfServiceLibrary1
+namespace PizzaDB
 {
     using System;
     using System.Data.Entity;

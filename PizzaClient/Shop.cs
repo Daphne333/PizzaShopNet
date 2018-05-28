@@ -16,5 +16,10 @@ namespace PizzaClient
         {
             InitializeComponent();
         }
+
+        private void Inventory_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

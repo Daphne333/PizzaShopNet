@@ -5,8 +5,8 @@ C:\Users\Staples\source\repos\PizzaShop\PizzaDB\bin\Debug\EntityFramework.dll
 C:\Users\Staples\source\repos\PizzaShop\PizzaDB\bin\Debug\EntityFramework.SqlServer.dll
 C:\Users\Staples\source\repos\PizzaShop\PizzaDB\bin\Debug\EntityFramework.xml
 C:\Users\Staples\source\repos\PizzaShop\PizzaDB\bin\Debug\EntityFramework.SqlServer.xml
-C:\Users\Staples\source\repos\PizzaShop\PizzaDB\obj\Debug\PizzaDB.csprojResolveAssemblyReference.cache
 C:\Users\Staples\source\repos\PizzaShop\PizzaDB\obj\Debug\PizzaDB.csproj.CoreCompileInputs.cache
 C:\Users\Staples\source\repos\PizzaShop\PizzaDB\obj\Debug\PizzaDB.csproj.CopyComplete
 C:\Users\Staples\source\repos\PizzaShop\PizzaDB\obj\Debug\PizzaDB.exe
 C:\Users\Staples\source\repos\PizzaShop\PizzaDB\obj\Debug\PizzaDB.pdb
+C:\Users\Staples\source\repos\PizzaShop\PizzaDB\obj\Debug\PizzaDB.csprojAssemblyReference.cache

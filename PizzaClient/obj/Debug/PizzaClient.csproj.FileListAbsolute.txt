@@ -1,7 +1,6 @@
 C:\Users\Staples\source\repos\PizzaShop\PizzaClient\bin\Debug\PizzaClient.exe.config
 C:\Users\Staples\source\repos\PizzaShop\PizzaClient\bin\Debug\PizzaClient.exe
 C:\Users\Staples\source\repos\PizzaShop\PizzaClient\bin\Debug\PizzaClient.pdb
-C:\Users\Staples\source\repos\PizzaShop\PizzaClient\obj\Debug\PizzaClient.csprojResolveAssemblyReference.cache
 C:\Users\Staples\source\repos\PizzaShop\PizzaClient\obj\Debug\PizzaClient.Properties.Resources.resources
 C:\Users\Staples\source\repos\PizzaShop\PizzaClient\obj\Debug\PizzaClient.RegisterLogin.resources
 C:\Users\Staples\source\repos\PizzaShop\PizzaClient\obj\Debug\PizzaClient.Shop.resources
@@ -9,3 +8,9 @@ C:\Users\Staples\source\repos\PizzaShop\PizzaClient\obj\Debug\PizzaClient.csproj
 C:\Users\Staples\source\repos\PizzaShop\PizzaClient\obj\Debug\PizzaClient.csproj.CoreCompileInputs.cache
 C:\Users\Staples\source\repos\PizzaShop\PizzaClient\obj\Debug\PizzaClient.exe
 C:\Users\Staples\source\repos\PizzaShop\PizzaClient\obj\Debug\PizzaClient.pdb
+C:\Users\Staples\source\repos\PizzaShop\PizzaClient\obj\Debug\PizzaClient.csprojAssemblyReference.cache
+C:\Users\Staples\source\repos\PizzaShop\PizzaClient\bin\Debug\EntityFramework.dll
+C:\Users\Staples\source\repos\PizzaShop\PizzaClient\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Staples\source\repos\PizzaShop\PizzaClient\bin\Debug\EntityFramework.xml
+C:\Users\Staples\source\repos\PizzaShop\PizzaClient\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Staples\source\repos\PizzaShop\PizzaClient\obj\Debug\PizzaClient.csproj.CopyComplete

@@ -1,0 +1,15 @@
+C:\Users\Staples\source\repos\PizzaShop\WcfServiceLibrary1\bin\Debug\WcfServiceLibrary1.dll
+C:\Users\Staples\source\repos\PizzaShop\WcfServiceLibrary1\bin\Debug\WcfServiceLibrary1.pdb
+C:\Users\Staples\source\repos\PizzaShop\WcfServiceLibrary1\bin\Debug\EntityFramework.dll
+C:\Users\Staples\source\repos\PizzaShop\WcfServiceLibrary1\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Staples\source\repos\PizzaShop\WcfServiceLibrary1\bin\Debug\PizzaDB.exe
+C:\Users\Staples\source\repos\PizzaShop\WcfServiceLibrary1\bin\Debug\PizzaDB.pdb
+C:\Users\Staples\source\repos\PizzaShop\WcfServiceLibrary1\bin\Debug\PizzaDB.exe.config
+C:\Users\Staples\source\repos\PizzaShop\WcfServiceLibrary1\bin\Debug\EntityFramework.xml
+C:\Users\Staples\source\repos\PizzaShop\WcfServiceLibrary1\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Staples\source\repos\PizzaShop\WcfServiceLibrary1\obj\Debug\PizzaServiceLibrary.csproj.CoreCompileInputs.cache
+C:\Users\Staples\source\repos\PizzaShop\WcfServiceLibrary1\obj\Debug\PizzaServiceLibrary.csproj.CopyComplete
+C:\Users\Staples\source\repos\PizzaShop\WcfServiceLibrary1\obj\Debug\WcfServiceLibrary1.dll
+C:\Users\Staples\source\repos\PizzaShop\WcfServiceLibrary1\obj\Debug\WcfServiceLibrary1.pdb
+C:\Users\Staples\source\repos\PizzaShop\WcfServiceLibrary1\obj\Debug\PizzaServiceLibrary.csprojAssemblyReference.cache
+C:\Users\Staples\source\repos\PizzaShop\WcfServiceLibrary1\bin\Debug\WcfServiceLibrary1.dll.config

@@ -7,11 +7,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using PizzaClient.PizzaReference;
 
 namespace PizzaClient
 {
     public partial class RegisterLogin : Form
     {
+        PizzaServiceClient pizzaProxy = new PizzaServiceClient();
+
         public RegisterLogin()
         {
             InitializeComponent();
@@ -39,6 +42,8 @@ namespace PizzaClient
 
         private void button2_Click(object sender, EventArgs e)
         {
+            string username = UsernameRegister.Text;
+            pizzaProxy.Register(username);
 
         }
 

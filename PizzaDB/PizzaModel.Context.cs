@@ -25,8 +25,8 @@ namespace PizzaDB
             throw new UnintentionalCodeFirstException();
         }
     
-        public virtual DbSet<OrderEntrySet> OrderEntrySet { get; set; }
-        public virtual DbSet<OrderSet> OrderSet { get; set; }
-        public virtual DbSet<ProductSet> ProductSet { get; set; }
+        public virtual DbSet<OrderEntry> OrderEntrySet { get; set; }
+        public virtual DbSet<Order> OrderSet { get; set; }
+        public virtual DbSet<Product> ProductSet { get; set; }
     }
 }

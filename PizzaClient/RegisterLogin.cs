@@ -41,5 +41,10 @@ namespace PizzaClient
         {
 
         }
+
+        private void UsernameLogin_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

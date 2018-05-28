@@ -34,6 +34,7 @@
             this.PizzaLijstProducts = new System.Windows.Forms.ListBox();
             this.Refresh = new System.Windows.Forms.Button();
             this.BuyButton = new System.Windows.Forms.Button();
+            this.MoneyLeftStore = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // Inventory
@@ -91,12 +92,22 @@
             this.BuyButton.Text = "Buy";
             this.BuyButton.UseVisualStyleBackColor = true;
             // 
+            // MoneyLeftStore
+            // 
+            this.MoneyLeftStore.AutoSize = true;
+            this.MoneyLeftStore.Location = new System.Drawing.Point(40, 248);
+            this.MoneyLeftStore.Name = "MoneyLeftStore";
+            this.MoneyLeftStore.Size = new System.Drawing.Size(16, 17);
+            this.MoneyLeftStore.TabIndex = 6;
+            this.MoneyLeftStore.Text = "..";
+            // 
             // Shop
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.BurlyWood;
             this.ClientSize = new System.Drawing.Size(702, 324);
+            this.Controls.Add(this.MoneyLeftStore);
             this.Controls.Add(this.BuyButton);
             this.Controls.Add(this.Refresh);
             this.Controls.Add(this.PizzaLijstProducts);
@@ -118,5 +129,6 @@
         private System.Windows.Forms.ListBox PizzaLijstProducts;
         private System.Windows.Forms.Button Refresh;
         private System.Windows.Forms.Button BuyButton;
+        private System.Windows.Forms.Label MoneyLeftStore;
     }
 }

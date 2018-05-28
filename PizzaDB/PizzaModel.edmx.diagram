@@ -5,9 +5,9 @@
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
       <Diagram DiagramId="7757a908f38e4308a3326c6261e946db" Name="Diagram1">
-        <EntityTypeShape EntityType="PizzaShopDBModel.OrderEntrySet" Width="1.5" PointX="3" PointY="0.875" IsExpanded="true" />
-        <EntityTypeShape EntityType="PizzaShopDBModel.OrderSet" Width="1.5" PointX="0.75" PointY="1.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="PizzaShopDBModel.ProductSet" Width="1.5" PointX="0.75" PointY="5.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="PizzaShopDBModel.OrderEntry" Width="1.5" PointX="3" PointY="0.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="PizzaShopDBModel.Order" Width="1.5" PointX="0.75" PointY="1.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="PizzaShopDBModel.Product" Width="1.5" PointX="0.75" PointY="5.125" IsExpanded="true" />
         <AssociationConnector Association="PizzaShopDBModel.FK_OrderOrderEntry" ManuallyRouted="false" />
         <AssociationConnector Association="PizzaShopDBModel.FK_ProductOrderEntry" ManuallyRouted="false" />
       </Diagram>

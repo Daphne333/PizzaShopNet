@@ -72,7 +72,7 @@
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="PizzaShopDBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
-        <EntityType Name="OrderEntrySet">
+        <EntityType Name="OrderEntry">
           <Key>
             <PropertyRef Name="Id" />
           </Key>
@@ -83,7 +83,7 @@
           <NavigationProperty Name="OrderSet" Relationship="Self.FK_OrderOrderEntry" FromRole="OrderEntrySet" ToRole="OrderSet" />
           <NavigationProperty Name="ProductSet" Relationship="Self.FK_ProductOrderEntry" FromRole="OrderEntrySet" ToRole="ProductSet" />
         </EntityType>
-        <EntityType Name="OrderSet">
+        <EntityType Name="Order">
           <Key>
             <PropertyRef Name="Id" />
           </Key>
@@ -92,7 +92,7 @@
           <Property Name="OrderDate" Type="DateTime" Nullable="false" Precision="3" />
           <NavigationProperty Name="OrderEntrySet" Relationship="Self.FK_OrderOrderEntry" FromRole="OrderSet" ToRole="OrderEntrySet" />
         </EntityType>
-        <EntityType Name="ProductSet">
+        <EntityType Name="Product">
           <Key>
             <PropertyRef Name="Id" />
           </Key>
@@ -102,8 +102,8 @@
           <NavigationProperty Name="OrderEntrySet" Relationship="Self.FK_ProductOrderEntry" FromRole="ProductSet" ToRole="OrderEntrySet" />
         </EntityType>
         <Association Name="FK_OrderOrderEntry">
-          <End Role="OrderSet" Type="Self.OrderSet" Multiplicity="1" />
-          <End Role="OrderEntrySet" Type="Self.OrderEntrySet" Multiplicity="*" />
+          <End Role="OrderSet" Type="PizzaShopDBModel.Order" Multiplicity="1" />
+          <End Role="OrderEntrySet" Type="PizzaShopDBModel.OrderEntry" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="OrderSet">
               <PropertyRef Name="Id" />
@@ -114,8 +114,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_ProductOrderEntry">
-          <End Role="ProductSet" Type="Self.ProductSet" Multiplicity="1" />
-          <End Role="OrderEntrySet" Type="Self.OrderEntrySet" Multiplicity="*" />
+          <End Role="ProductSet" Type="PizzaShopDBModel.Product" Multiplicity="1" />
+          <End Role="OrderEntrySet" Type="PizzaShopDBModel.OrderEntry" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="ProductSet">
               <PropertyRef Name="Id" />
@@ -126,9 +126,9 @@
           </ReferentialConstraint>
         </Association>
         <EntityContainer Name="PizzaShopDBEntities" annotation:LazyLoadingEnabled="true">
-          <EntitySet Name="OrderEntrySet" EntityType="Self.OrderEntrySet" />
-          <EntitySet Name="OrderSet" EntityType="Self.OrderSet" />
-          <EntitySet Name="ProductSet" EntityType="Self.ProductSet" />
+          <EntitySet Name="OrderEntrySet" EntityType="PizzaShopDBModel.OrderEntry" />
+          <EntitySet Name="OrderSet" EntityType="PizzaShopDBModel.Order" />
+          <EntitySet Name="ProductSet" EntityType="PizzaShopDBModel.Product" />
           <AssociationSet Name="FK_OrderOrderEntry" Association="Self.FK_OrderOrderEntry">
             <End Role="OrderSet" EntitySet="OrderSet" />
             <End Role="OrderEntrySet" EntitySet="OrderEntrySet" />
@@ -145,7 +145,7 @@
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
         <EntityContainerMapping StorageEntityContainer="PizzaShopDBModelStoreContainer" CdmEntityContainer="PizzaShopDBEntities">
           <EntitySetMapping Name="OrderEntrySet">
-            <EntityTypeMapping TypeName="PizzaShopDBModel.OrderEntrySet">
+            <EntityTypeMapping TypeName="PizzaShopDBModel.OrderEntry">
               <MappingFragment StoreEntitySet="OrderEntrySet">
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="Amount" ColumnName="Amount" />
@@ -155,7 +155,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="OrderSet">
-            <EntityTypeMapping TypeName="PizzaShopDBModel.OrderSet">
+            <EntityTypeMapping TypeName="PizzaShopDBModel.Order">
               <MappingFragment StoreEntitySet="OrderSet">
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="CustName" ColumnName="CustName" />
@@ -164,7 +164,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="ProductSet">
-            <EntityTypeMapping TypeName="PizzaShopDBModel.ProductSet">
+            <EntityTypeMapping TypeName="PizzaShopDBModel.Product">
               <MappingFragment StoreEntitySet="ProductSet">
                 <ScalarProperty Name="Id" ColumnName="Id" />
                 <ScalarProperty Name="Name" ColumnName="Name" />

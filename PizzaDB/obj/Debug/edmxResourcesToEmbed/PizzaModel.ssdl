@@ -1,0 +1,65 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="PizzaShopDBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="OrderEntrySet">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Amount" Type="int" Nullable="false" />
+    <Property Name="OrderId" Type="int" Nullable="false" />
+    <Property Name="Product_Id" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="OrderSet">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CustName" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="OrderDate" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ProductSet">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Price" Type="float" Nullable="false" />
+  </EntityType>
+  <Association Name="FK_OrderOrderEntry">
+    <End Role="OrderSet" Type="Self.OrderSet" Multiplicity="1" />
+    <End Role="OrderEntrySet" Type="Self.OrderEntrySet" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="OrderSet">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="OrderEntrySet">
+        <PropertyRef Name="OrderId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ProductOrderEntry">
+    <End Role="ProductSet" Type="Self.ProductSet" Multiplicity="1" />
+    <End Role="OrderEntrySet" Type="Self.OrderEntrySet" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ProductSet">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="OrderEntrySet">
+        <PropertyRef Name="Product_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="PizzaShopDBModelStoreContainer">
+    <EntitySet Name="OrderEntrySet" EntityType="Self.OrderEntrySet" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="OrderSet" EntityType="Self.OrderSet" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="ProductSet" EntityType="Self.ProductSet" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_OrderOrderEntry" Association="Self.FK_OrderOrderEntry">
+      <End Role="OrderSet" EntitySet="OrderSet" />
+      <End Role="OrderEntrySet" EntitySet="OrderEntrySet" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ProductOrderEntry" Association="Self.FK_ProductOrderEntry">
+      <End Role="ProductSet" EntitySet="ProductSet" />
+      <End Role="OrderEntrySet" EntitySet="OrderEntrySet" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

@@ -51,10 +51,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="OrderEntrySet.cs">
+    <Compile Include="Order.cs">
       <DependentUpon>PizzaModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="OrderSet.cs">
+    <Compile Include="OrderEntry.cs">
       <DependentUpon>PizzaModel.tt</DependentUpon>
     </Compile>
     <Compile Include="PizzaModel.Context.cs">
@@ -72,7 +72,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>PizzaModel.edmx</DependentUpon>
     </Compile>
-    <Compile Include="ProductSet.cs">
+    <Compile Include="Product.cs">
       <DependentUpon>PizzaModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />

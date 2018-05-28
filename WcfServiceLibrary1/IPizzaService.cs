@@ -13,5 +13,8 @@ namespace WcfServiceLibrary1
     {
         [OperationContract]
         String Register(string username);
+
+        [OperationContract]
+        Boolean Login(string username, string password);
     }
 }

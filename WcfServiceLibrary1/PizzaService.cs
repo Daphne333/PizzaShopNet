@@ -4,22 +4,24 @@ using System.Linq;
 using System.Runtime.Serialization;
 using System.ServiceModel;
 using System.Text;
+using PizzaDB;
 
 namespace WcfServiceLibrary1
 {
     // NOTE: You can use the "Rename" command on the "Refactor" menu to change the class name "PizzaService" in both code and config file together.
     public class PizzaService : IPizzaService
     {
+
+        public static UserModel usermodel = new UserModel();
+        
         public string Register(string username)
         {
-            char[] charArray = username.ToCharArray();
-            Array.Reverse(charArray);
-            return new string(charArray);
+            return usermodel.Register(username);
         }
 
-        public void Login(string username, string password)
+        public Boolean Login(string username, string password)
         {
-
+            return usermodel.Login(username, password);
         }
     }
 }

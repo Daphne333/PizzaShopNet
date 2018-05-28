@@ -12,6 +12,7 @@ namespace PizzaDB
         {
             using (PizzaShopDBEntities dbDriver = new PizzaShopDBEntities())
             {
+
                 //Product p1 = new Product
                 //{
                 //    Name = "Pizza Margherita",
@@ -31,6 +32,24 @@ namespace PizzaDB
                 //dbDriver.ProductSet.Add(p2);
                 //dbDriver.ProductSet.Add(p3);
                 //dbDriver.SaveChanges();
+
+                //Customer c1 = new Customer
+                //{
+                //    Username = "Admin",
+                //    Password = "nimdA"
+                //};
+                //Customer c2 = new Customer
+                //{
+                //    Username = "Daphne",
+                //    Password = "enhpaD"
+                //};
+
+                //dbDriver.CustomerSet.Add(c1);
+                //dbDriver.CustomerSet.Add(c2);
+                //dbDriver.SaveChanges();
+
+
+
             }
         }
     }

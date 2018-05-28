@@ -4,71 +4,95 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="PizzaShopDBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
-        <EntityType Name="OrderEntrySet">
-          <Key>
-            <PropertyRef Name="Id" />
-          </Key>
-          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="Amount" Type="int" Nullable="false" />
-          <Property Name="OrderId" Type="int" Nullable="false" />
-          <Property Name="Product_Id" Type="int" Nullable="false" />
-        </EntityType>
-        <EntityType Name="OrderSet">
-          <Key>
-            <PropertyRef Name="Id" />
-          </Key>
-          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="CustName" Type="nvarchar(max)" Nullable="false" />
-          <Property Name="OrderDate" Type="datetime" Nullable="false" />
-        </EntityType>
-        <EntityType Name="ProductSet">
-          <Key>
-            <PropertyRef Name="Id" />
-          </Key>
-          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="Name" Type="nvarchar(max)" Nullable="false" />
-          <Property Name="Price" Type="float" Nullable="false" />
-        </EntityType>
-        <Association Name="FK_OrderOrderEntry">
-          <End Role="OrderSet" Type="Self.OrderSet" Multiplicity="1" />
-          <End Role="OrderEntrySet" Type="Self.OrderEntrySet" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="OrderSet">
-              <PropertyRef Name="Id" />
-            </Principal>
-            <Dependent Role="OrderEntrySet">
-              <PropertyRef Name="OrderId" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_ProductOrderEntry">
-          <End Role="ProductSet" Type="Self.ProductSet" Multiplicity="1" />
-          <End Role="OrderEntrySet" Type="Self.OrderEntrySet" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="ProductSet">
-              <PropertyRef Name="Id" />
-            </Principal>
-            <Dependent Role="OrderEntrySet">
-              <PropertyRef Name="Product_Id" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <EntityContainer Name="PizzaShopDBModelStoreContainer">
-          <EntitySet Name="OrderEntrySet" EntityType="Self.OrderEntrySet" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="OrderSet" EntityType="Self.OrderSet" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="ProductSet" EntityType="Self.ProductSet" Schema="dbo" store:Type="Tables" />
-          <AssociationSet Name="FK_OrderOrderEntry" Association="Self.FK_OrderOrderEntry">
-            <End Role="OrderSet" EntitySet="OrderSet" />
-            <End Role="OrderEntrySet" EntitySet="OrderEntrySet" />
-          </AssociationSet>
-          <AssociationSet Name="FK_ProductOrderEntry" Association="Self.FK_ProductOrderEntry">
-            <End Role="ProductSet" EntitySet="ProductSet" />
-            <End Role="OrderEntrySet" EntitySet="OrderEntrySet" />
-          </AssociationSet>
-        </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+    <Schema Namespace="PizzaShopDBModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2012" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityContainer Name="PizzaShopDBModelStoreContainer">
+    <EntitySet Name="OrderEntrySet" EntityType="PizzaShopDBModel.Store.OrderEntrySet" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="OrderSet" EntityType="PizzaShopDBModel.Store.OrderSet" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="ProductSet" EntityType="PizzaShopDBModel.Store.ProductSet" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="CustomerSet" EntityType="PizzaShopDBModel.Store.CustomerSet" store:Type="Tables" Schema="dbo" />
+    <AssociationSet Name="FK_OrderOrderEntry" Association="PizzaShopDBModel.Store.FK_OrderOrderEntry">
+      <End Role="OrderSet" EntitySet="OrderSet" />
+      <End Role="OrderEntrySet" EntitySet="OrderEntrySet" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ProductOrderEntry" Association="PizzaShopDBModel.Store.FK_ProductOrderEntry">
+      <End Role="ProductSet" EntitySet="ProductSet" />
+      <End Role="OrderEntrySet" EntitySet="OrderEntrySet" />
+    </AssociationSet>
+    <AssociationSet Name="CustomerOrder" Association="PizzaShopDBModel.Store.CustomerOrder">
+      <End Role="Customer" EntitySet="CustomerSet" />
+      <End Role="Order" EntitySet="OrderSet" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="OrderEntrySet">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Amount" Type="int" Nullable="false" />
+    <Property Name="OrderId" Type="int" Nullable="false" />
+    <Property Name="Product_Id" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="OrderSet">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="OrderDate" Type="datetime" Nullable="false" />
+    <Property Name="CustomerId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ProductSet">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Price" Type="float" Nullable="false" />
+  </EntityType>
+  <EntityType Name="CustomerSet">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Username" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Password" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
+  <Association Name="FK_OrderOrderEntry">
+    <End Role="OrderSet" Type="PizzaShopDBModel.Store.OrderSet" Multiplicity="1" />
+    <End Role="OrderEntrySet" Type="PizzaShopDBModel.Store.OrderEntrySet" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="OrderSet">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="OrderEntrySet">
+        <PropertyRef Name="OrderId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ProductOrderEntry">
+    <End Role="ProductSet" Type="PizzaShopDBModel.Store.ProductSet" Multiplicity="1" />
+    <End Role="OrderEntrySet" Type="PizzaShopDBModel.Store.OrderEntrySet" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ProductSet">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="OrderEntrySet">
+        <PropertyRef Name="Product_Id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="CustomerOrder">
+    <End Role="Customer" Type="PizzaShopDBModel.Store.CustomerSet" Multiplicity="1" />
+    <End Role="Order" Type="PizzaShopDBModel.Store.OrderSet" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Customer">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Order">
+        <PropertyRef Name="CustomerId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="PizzaShopDBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -88,9 +112,10 @@
             <PropertyRef Name="Id" />
           </Key>
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="CustName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="OrderDate" Type="DateTime" Nullable="false" Precision="3" />
           <NavigationProperty Name="OrderEntrySet" Relationship="Self.FK_OrderOrderEntry" FromRole="OrderSet" ToRole="OrderEntrySet" />
+          <NavigationProperty Name="Customer" Relationship="PizzaShopDBModel.CustomerOrder" FromRole="Order" ToRole="Customer" />
+          <Property Name="CustomerId" Type="Int32" Nullable="false" />
         </EntityType>
         <EntityType Name="Product">
           <Key>
@@ -99,7 +124,6 @@
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="Price" Type="Double" Nullable="false" />
-          <NavigationProperty Name="OrderEntrySet" Relationship="Self.FK_ProductOrderEntry" FromRole="ProductSet" ToRole="OrderEntrySet" />
         </EntityType>
         <Association Name="FK_OrderOrderEntry">
           <End Role="OrderSet" Type="PizzaShopDBModel.Order" Multiplicity="1" />
@@ -137,44 +161,78 @@
             <End Role="ProductSet" EntitySet="ProductSet" />
             <End Role="OrderEntrySet" EntitySet="OrderEntrySet" />
           </AssociationSet>
+          <EntitySet Name="CustomerSet" EntityType="PizzaShopDBModel.Customer" />
+          <AssociationSet Name="CustomerOrder" Association="PizzaShopDBModel.CustomerOrder">
+            <End Role="Customer" EntitySet="CustomerSet" />
+            <End Role="Order" EntitySet="OrderSet" />
+          </AssociationSet>
         </EntityContainer>
+        <EntityType Name="Customer">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Username" Type="String" Nullable="false" />
+          <Property Name="Password" Type="String" Nullable="false" />
+          <NavigationProperty Name="Order" Relationship="PizzaShopDBModel.CustomerOrder" FromRole="Customer" ToRole="Order" />
+        </EntityType>
+        <Association Name="CustomerOrder">
+          <End Type="PizzaShopDBModel.Customer" Role="Customer" Multiplicity="1" />
+          <End Type="PizzaShopDBModel.Order" Role="Order" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Customer">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="Order">
+              <PropertyRef Name="CustomerId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
     <edmx:Mappings>
-      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="PizzaShopDBModelStoreContainer" CdmEntityContainer="PizzaShopDBEntities">
-          <EntitySetMapping Name="OrderEntrySet">
-            <EntityTypeMapping TypeName="PizzaShopDBModel.OrderEntry">
-              <MappingFragment StoreEntitySet="OrderEntrySet">
-                <ScalarProperty Name="Id" ColumnName="Id" />
-                <ScalarProperty Name="Amount" ColumnName="Amount" />
-                <ScalarProperty Name="OrderId" ColumnName="OrderId" />
-                <ScalarProperty Name="Product_Id" ColumnName="Product_Id" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="OrderSet">
-            <EntityTypeMapping TypeName="PizzaShopDBModel.Order">
-              <MappingFragment StoreEntitySet="OrderSet">
-                <ScalarProperty Name="Id" ColumnName="Id" />
-                <ScalarProperty Name="CustName" ColumnName="CustName" />
-                <ScalarProperty Name="OrderDate" ColumnName="OrderDate" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="ProductSet">
-            <EntityTypeMapping TypeName="PizzaShopDBModel.Product">
-              <MappingFragment StoreEntitySet="ProductSet">
-                <ScalarProperty Name="Id" ColumnName="Id" />
-                <ScalarProperty Name="Name" ColumnName="Name" />
-                <ScalarProperty Name="Price" ColumnName="Price" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-        </EntityContainerMapping>
-      </Mapping>
-    </edmx:Mappings>
+    <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="PizzaShopDBModelStoreContainer" CdmEntityContainer="PizzaShopDBEntities">
+    <EntitySetMapping Name="OrderEntrySet">
+      <EntityTypeMapping TypeName="IsTypeOf(PizzaShopDBModel.OrderEntry)">
+        <MappingFragment StoreEntitySet="OrderEntrySet">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Amount" ColumnName="Amount" />
+          <ScalarProperty Name="OrderId" ColumnName="OrderId" />
+          <ScalarProperty Name="Product_Id" ColumnName="Product_Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="OrderSet">
+      <EntityTypeMapping TypeName="IsTypeOf(PizzaShopDBModel.Order)">
+        <MappingFragment StoreEntitySet="OrderSet">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="OrderDate" ColumnName="OrderDate" />
+          <ScalarProperty Name="CustomerId" ColumnName="CustomerId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ProductSet">
+      <EntityTypeMapping TypeName="IsTypeOf(PizzaShopDBModel.Product)">
+        <MappingFragment StoreEntitySet="ProductSet">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="Price" ColumnName="Price" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CustomerSet">
+      <EntityTypeMapping TypeName="IsTypeOf(PizzaShopDBModel.Customer)">
+        <MappingFragment StoreEntitySet="CustomerSet">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Username" ColumnName="Username" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping></edmx:Mappings>
   </edmx:Runtime>
   <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
   <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
@@ -188,7 +246,7 @@
         <DesignerProperty Name="ValidateOnBuild" Value="true" />
         <DesignerProperty Name="EnablePluralization" Value="false" />
         <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
-        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="UseLegacyProvider" Value="False" />
         <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
       </DesignerInfoPropertySet>
     </Options>

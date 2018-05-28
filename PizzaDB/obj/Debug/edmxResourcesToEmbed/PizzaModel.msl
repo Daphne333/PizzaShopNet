@@ -2,7 +2,7 @@
 <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
   <EntityContainerMapping StorageEntityContainer="PizzaShopDBModelStoreContainer" CdmEntityContainer="PizzaShopDBEntities">
     <EntitySetMapping Name="OrderEntrySet">
-      <EntityTypeMapping TypeName="PizzaShopDBModel.OrderEntry">
+      <EntityTypeMapping TypeName="IsTypeOf(PizzaShopDBModel.OrderEntry)">
         <MappingFragment StoreEntitySet="OrderEntrySet">
           <ScalarProperty Name="Id" ColumnName="Id" />
           <ScalarProperty Name="Amount" ColumnName="Amount" />
@@ -12,20 +12,29 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="OrderSet">
-      <EntityTypeMapping TypeName="PizzaShopDBModel.Order">
+      <EntityTypeMapping TypeName="IsTypeOf(PizzaShopDBModel.Order)">
         <MappingFragment StoreEntitySet="OrderSet">
           <ScalarProperty Name="Id" ColumnName="Id" />
-          <ScalarProperty Name="CustName" ColumnName="CustName" />
           <ScalarProperty Name="OrderDate" ColumnName="OrderDate" />
+          <ScalarProperty Name="CustomerId" ColumnName="CustomerId" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="ProductSet">
-      <EntityTypeMapping TypeName="PizzaShopDBModel.Product">
+      <EntityTypeMapping TypeName="IsTypeOf(PizzaShopDBModel.Product)">
         <MappingFragment StoreEntitySet="ProductSet">
           <ScalarProperty Name="Id" ColumnName="Id" />
           <ScalarProperty Name="Name" ColumnName="Name" />
           <ScalarProperty Name="Price" ColumnName="Price" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CustomerSet">
+      <EntityTypeMapping TypeName="IsTypeOf(PizzaShopDBModel.Customer)">
+        <MappingFragment StoreEntitySet="CustomerSet">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Username" ColumnName="Username" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

@@ -28,5 +28,6 @@ namespace PizzaDB
         public virtual DbSet<OrderEntry> OrderEntrySet { get; set; }
         public virtual DbSet<Order> OrderSet { get; set; }
         public virtual DbSet<Product> ProductSet { get; set; }
+        public virtual DbSet<Customer> CustomerSet { get; set; }
     }
 }

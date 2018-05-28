@@ -16,9 +16,10 @@
       <PropertyRef Name="Id" />
     </Key>
     <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="CustName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
     <Property Name="OrderDate" Type="DateTime" Nullable="false" Precision="3" />
     <NavigationProperty Name="OrderEntrySet" Relationship="Self.FK_OrderOrderEntry" FromRole="OrderSet" ToRole="OrderEntrySet" />
+    <NavigationProperty Name="Customer" Relationship="PizzaShopDBModel.CustomerOrder" FromRole="Order" ToRole="Customer" />
+    <Property Name="CustomerId" Type="Int32" Nullable="false" />
   </EntityType>
   <EntityType Name="Product">
     <Key>
@@ -27,7 +28,6 @@
     <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
     <Property Name="Price" Type="Double" Nullable="false" />
-    <NavigationProperty Name="OrderEntrySet" Relationship="Self.FK_ProductOrderEntry" FromRole="ProductSet" ToRole="OrderEntrySet" />
   </EntityType>
   <Association Name="FK_OrderOrderEntry">
     <End Role="OrderSet" Type="PizzaShopDBModel.Order" Multiplicity="1" />
@@ -65,5 +65,31 @@
       <End Role="ProductSet" EntitySet="ProductSet" />
       <End Role="OrderEntrySet" EntitySet="OrderEntrySet" />
     </AssociationSet>
+    <EntitySet Name="CustomerSet" EntityType="PizzaShopDBModel.Customer" />
+    <AssociationSet Name="CustomerOrder" Association="PizzaShopDBModel.CustomerOrder">
+      <End Role="Customer" EntitySet="CustomerSet" />
+      <End Role="Order" EntitySet="OrderSet" />
+    </AssociationSet>
   </EntityContainer>
+  <EntityType Name="Customer">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Username" Type="String" Nullable="false" />
+    <Property Name="Password" Type="String" Nullable="false" />
+    <NavigationProperty Name="Order" Relationship="PizzaShopDBModel.CustomerOrder" FromRole="Customer" ToRole="Order" />
+  </EntityType>
+  <Association Name="CustomerOrder">
+    <End Type="PizzaShopDBModel.Customer" Role="Customer" Multiplicity="1" />
+    <End Type="PizzaShopDBModel.Order" Role="Order" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Customer">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="Order">
+        <PropertyRef Name="CustomerId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
 </Schema>

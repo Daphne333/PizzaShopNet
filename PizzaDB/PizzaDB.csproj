@@ -51,6 +51,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Customer.cs">
+      <DependentUpon>PizzaModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="Order.cs">
       <DependentUpon>PizzaModel.tt</DependentUpon>
     </Compile>
@@ -77,6 +80,7 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UserModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -95,6 +99,7 @@
       <LastGenOutput>PizzaModel.Context.cs</LastGenOutput>
       <DependentUpon>PizzaModel.edmx</DependentUpon>
     </Content>
+    <Content Include="PizzaModel.edmx.sql" />
     <Content Include="PizzaModel.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>PizzaModel.edmx</DependentUpon>

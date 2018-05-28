@@ -12,20 +12,19 @@ namespace PizzaDB
     using System;
     using System.Collections.Generic;
     
-    public partial class Order
+    public partial class Customer
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Order()
+        public Customer()
         {
-            this.OrderEntrySet = new HashSet<OrderEntry>();
+            this.Order = new HashSet<Order>();
         }
     
         public int Id { get; set; }
-        public System.DateTime OrderDate { get; set; }
-        public int CustomerId { get; set; }
+        public string Username { get; set; }
+        public string Password { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<OrderEntry> OrderEntrySet { get; set; }
-        public virtual Customer Customer { get; set; }
+        public virtual ICollection<Order> Order { get; set; }
     }
 }

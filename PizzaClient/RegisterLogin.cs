@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using PizzaClient.PizzaReference;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace PizzaClient
 {
@@ -32,6 +33,12 @@ namespace PizzaClient
             if (pizzaProxy.Login(username, password) == false)
             {
                 ErrorLogin.Visible = true;
+            }
+            else
+            {
+                Shop shop = new Shop();
+                this.Hide();
+                shop.ShowDialog();
             }
 
         }

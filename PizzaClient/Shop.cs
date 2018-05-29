@@ -21,5 +21,10 @@ namespace PizzaClient
         {
 
         }
+
+        private void Refresh_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

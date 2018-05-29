@@ -94,6 +94,12 @@
     <None Include="Connected Services\PizzaReference\item1.xsd">
       <SubType>Designer</SubType>
     </None>
+    <None Include="Connected Services\PizzaReference\item2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\PizzaReference\PizzaClient.PizzaReference.Product.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
     <None Include="Connected Services\PizzaReference\PizzaService.wsdl" />
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">

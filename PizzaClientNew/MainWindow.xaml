@@ -1,0 +1,28 @@
+﻿<Window x:Class="PizzaClientNew.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PizzaClientNew"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="206.339" Width="376.642" Background="#FFFAFAFA">
+    <TabControl HorizontalAlignment="Left" Height="307" Margin="0,10,0,-2.6" VerticalAlignment="Top" Width="564">
+        <TabItem x:Name="Login" Header="Login">
+            <Grid Background="#FFD9B76E" Margin="0,0,188.6,132.2">
+                <TextBox HorizontalAlignment="Left" Height="23" Margin="182,41,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
+                <TextBox HorizontalAlignment="Left" Height="23" Margin="182,85,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120" RenderTransformOrigin="0.5,-2.791"/>
+                <Label Content="Username" HorizontalAlignment="Left" Margin="37,41,0,0" VerticalAlignment="Top" Height="23" Width="69"/>
+                <Label Content="Password" HorizontalAlignment="Left" Margin="44,85,0,0" VerticalAlignment="Top"/>
+            </Grid>
+        </TabItem>
+        <TabItem Header="Register">
+            <TabItem.Background>
+                <LinearGradientBrush EndPoint="0,1" StartPoint="0,0">
+                    <GradientStop Color="#FFF0F0F0" Offset="0"/>
+                    <GradientStop Color="White" Offset="1"/>
+                </LinearGradientBrush>
+            </TabItem.Background>
+            <Grid Background="#FFD9B76E"/>
+        </TabItem>
+    </TabControl>
+</Window>

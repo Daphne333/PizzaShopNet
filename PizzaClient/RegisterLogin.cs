@@ -26,7 +26,13 @@ namespace PizzaClient
         }
 
         private void button1_Click(object sender, EventArgs e)
-        {
+        {//nog afhandeling maken als de login is geslaagd
+            string username = UsernameLogin.Text;
+            string password = PasswordLogin.Text;
+            if (pizzaProxy.Login(username, password) == false)
+            {
+                ErrorLogin.Visible = true;
+            }
 
         }
 
@@ -41,7 +47,7 @@ namespace PizzaClient
         }
 
         private void button2_Click(object sender, EventArgs e)
-        {// Errorafhandeling
+        {// Errorafhandeling verbeteren in Usermodel
             string username = UsernameRegister.Text;
             string password = pizzaProxy.Register(username);
             if(password.Equals("Username bestaat al!"))

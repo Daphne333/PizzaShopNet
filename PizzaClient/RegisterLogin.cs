@@ -41,10 +41,18 @@ namespace PizzaClient
         }
 
         private void button2_Click(object sender, EventArgs e)
-        {
+        {// Errorafhandeling
             string username = UsernameRegister.Text;
-            pizzaProxy.Register(username);
-
+            string password = pizzaProxy.Register(username);
+            if(password.Equals("Username bestaat al!"))
+            {
+                RegisterPasswordMelding.Text = "Username bestaat al!";
+            }
+            else
+            {
+                RegisterPasswordMelding.Text = "Your new password: " + password;
+            }
+            
         }
 
         private void UsernameLogin_TextChanged(object sender, EventArgs e)

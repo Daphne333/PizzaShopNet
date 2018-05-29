@@ -31,16 +31,16 @@
             this.button1 = new System.Windows.Forms.Button();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.ErrorLogin = new System.Windows.Forms.Label();
             this.PasswordLogin = new System.Windows.Forms.TextBox();
             this.UsernameLogin = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.RegisterPasswordMelding = new System.Windows.Forms.Label();
             this.UsernameRegister = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.button2 = new System.Windows.Forms.Button();
-            this.RegisterPasswordMelding = new System.Windows.Forms.Label();
-            this.FoutmeldingLogin = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -69,7 +69,7 @@
             // tabPage1
             // 
             this.tabPage1.BackColor = System.Drawing.Color.BurlyWood;
-            this.tabPage1.Controls.Add(this.FoutmeldingLogin);
+            this.tabPage1.Controls.Add(this.ErrorLogin);
             this.tabPage1.Controls.Add(this.PasswordLogin);
             this.tabPage1.Controls.Add(this.UsernameLogin);
             this.tabPage1.Controls.Add(this.label2);
@@ -82,6 +82,17 @@
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Login";
             this.tabPage1.Click += new System.EventHandler(this.tabPage1_Click);
+            // 
+            // ErrorLogin
+            // 
+            this.ErrorLogin.AutoSize = true;
+            this.ErrorLogin.ForeColor = System.Drawing.Color.Red;
+            this.ErrorLogin.Location = new System.Drawing.Point(146, 95);
+            this.ErrorLogin.Name = "ErrorLogin";
+            this.ErrorLogin.Size = new System.Drawing.Size(163, 17);
+            this.ErrorLogin.TabIndex = 5;
+            this.ErrorLogin.Text = "Customer not registered!";
+            this.ErrorLogin.Visible = false;
             // 
             // PasswordLogin
             // 
@@ -132,6 +143,15 @@
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Register";
             // 
+            // RegisterPasswordMelding
+            // 
+            this.RegisterPasswordMelding.AutoSize = true;
+            this.RegisterPasswordMelding.Location = new System.Drawing.Point(20, 71);
+            this.RegisterPasswordMelding.Name = "RegisterPasswordMelding";
+            this.RegisterPasswordMelding.Size = new System.Drawing.Size(16, 17);
+            this.RegisterPasswordMelding.TabIndex = 3;
+            this.RegisterPasswordMelding.Text = "..";
+            // 
             // UsernameRegister
             // 
             this.UsernameRegister.Location = new System.Drawing.Point(149, 22);
@@ -157,26 +177,6 @@
             this.button2.Text = "Register";
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
-            // 
-            // RegisterPasswordMelding
-            // 
-            this.RegisterPasswordMelding.AutoSize = true;
-            this.RegisterPasswordMelding.Location = new System.Drawing.Point(20, 71);
-            this.RegisterPasswordMelding.Name = "RegisterPasswordMelding";
-            this.RegisterPasswordMelding.Size = new System.Drawing.Size(16, 17);
-            this.RegisterPasswordMelding.TabIndex = 3;
-            this.RegisterPasswordMelding.Text = "..";
-            // 
-            // FoutmeldingLogin
-            // 
-            this.FoutmeldingLogin.AutoSize = true;
-            this.FoutmeldingLogin.ForeColor = System.Drawing.Color.Red;
-            this.FoutmeldingLogin.Location = new System.Drawing.Point(146, 95);
-            this.FoutmeldingLogin.Name = "FoutmeldingLogin";
-            this.FoutmeldingLogin.Size = new System.Drawing.Size(163, 17);
-            this.FoutmeldingLogin.TabIndex = 5;
-            this.FoutmeldingLogin.Text = "Customer not registered!";
-            this.FoutmeldingLogin.Visible = false;
             // 
             // RegisterLogin
             // 
@@ -210,7 +210,7 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox UsernameRegister;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label FoutmeldingLogin;
+        private System.Windows.Forms.Label ErrorLogin;
         private System.Windows.Forms.Label RegisterPasswordMelding;
     }
 }

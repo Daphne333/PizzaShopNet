@@ -23,6 +23,7 @@
   </MetadataSources>
   <Metadata>
     <MetadataFile FileName="item.xsd" MetadataType="Schema" ID="327e7051-f9d3-471a-8bbf-38004ff48b09" SourceId="1" SourceUrl="http://localhost:8733/Design_Time_Addresses/PizzaServiceLibrary/PizzaService/?xsd=xsd1" />
+    <MetadataFile FileName="item2.xsd" MetadataType="Schema" ID="41d018da-100f-4d13-95ce-3ef303ff3bb4" SourceId="1" SourceUrl="http://localhost:8733/Design_Time_Addresses/PizzaServiceLibrary/PizzaService/?xsd=xsd2" />
     <MetadataFile FileName="item.disco" MetadataType="Disco" ID="d6808630-5bec-4e68-8b8d-a1a35288694a" SourceId="1" SourceUrl="http://localhost:8733/Design_Time_Addresses/PizzaServiceLibrary/PizzaService/?disco" />
     <MetadataFile FileName="item1.xsd" MetadataType="Schema" ID="9ac2bdf3-1f15-4a5d-80a8-0cba8b9542fd" SourceId="1" SourceUrl="http://localhost:8733/Design_Time_Addresses/PizzaServiceLibrary/PizzaService/?xsd=xsd0" />
     <MetadataFile FileName="PizzaService.wsdl" MetadataType="Wsdl" ID="6f6450e3-284c-4985-bc6f-83419a9a0af6" SourceId="1" SourceUrl="http://localhost:8733/Design_Time_Addresses/PizzaServiceLibrary/PizzaService/?wsdl" />

@@ -6,25 +6,24 @@ using System.Threading.Tasks;
 
 namespace PizzaDB
 {
-    class ProductModel
+    public class ProductModel
     {
-        //public List[Product] ProductList()
-        //{
-        //    using (PizzaShopDBEntities dbDriver = new PizzaShopDBEntities())
-        //    {
+        public List<Product> ProductList()
+        {
+            using (PizzaShopDBEntities dbDriver = new PizzaShopDBEntities())
+            {
+                List<Product> productList = new List<Product>();
 
-        //        var products =
-        //        from Product in dbDriver.ProductSet
-        //        select new
-        //        {
-        //            Name = Product.Name,
-        //            Total = (from oe in Product.OrderEntry
-        //                     select oe.Product.Price * oe.Amount).Sum()
-        //        };
+                var products = 
+                    from p in dbDriver.ProductSet
+                    select p;
 
-        //        foreach (var product in products)
-        //            return product;
-        //    }
-        //}
+                foreach (Product p in products)
+                    productList.Add(p);
+
+                return productList;
+
+            }
+        }
     }
 }

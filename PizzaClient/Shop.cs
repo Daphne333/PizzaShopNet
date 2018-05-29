@@ -26,5 +26,10 @@ namespace PizzaClient
         {
 
         }
+
+        private void PizzaLijstProducts_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

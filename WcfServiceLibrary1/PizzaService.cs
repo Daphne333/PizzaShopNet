@@ -13,6 +13,7 @@ namespace PizzaServiceLibrary
     {
 
         public static UserModel usermodel = new UserModel();
+        public static ProductModel productmodel = new ProductModel();
         
         public string Register(string username)
         {
@@ -22,6 +23,11 @@ namespace PizzaServiceLibrary
         public Boolean Login(string username, string password)
         {
             return usermodel.Login(username, password);
+        }
+
+        public List<Product> ProductList()
+        {
+            return productmodel.ProductList();
         }
     }
 }

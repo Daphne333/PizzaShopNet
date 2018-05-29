@@ -4,6 +4,7 @@ using System.Linq;
 using System.Runtime.Serialization;
 using System.ServiceModel;
 using System.Text;
+using PizzaDB;
 
 namespace PizzaServiceLibrary
 {
@@ -16,5 +17,10 @@ namespace PizzaServiceLibrary
 
         [OperationContract]
         Boolean Login(string username, string password);
+
+        [OperationContract]
+        List<Product> ProductList();
+
+
     }
 }

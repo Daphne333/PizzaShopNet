@@ -73,6 +73,7 @@
             this.PizzaLijstProducts.Name = "PizzaLijstProducts";
             this.PizzaLijstProducts.Size = new System.Drawing.Size(270, 180);
             this.PizzaLijstProducts.TabIndex = 3;
+            this.PizzaLijstProducts.SelectedIndexChanged += new System.EventHandler(this.PizzaLijstProducts_SelectedIndexChanged);
             // 
             // Refresh
             // 

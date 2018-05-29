@@ -57,9 +57,9 @@ namespace PizzaClient
         {// Errorafhandeling verbeteren in Usermodel
             string username = UsernameRegister.Text;
             string password = pizzaProxy.Register(username);
-            if(password.Equals("Username bestaat al!"))
+            if(password.Equals("Username already exists!"))
             {
-                RegisterPasswordMelding.Text = "Username bestaat al!";
+                RegisterPasswordMelding.Text = "Username already exists!";
             }
             else
             {

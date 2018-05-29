@@ -42,6 +42,7 @@
     <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="Name" Type="nvarchar(max)" Nullable="false" />
     <Property Name="Price" Type="float" Nullable="false" />
+    <Property Name="Amount" Type="int" Nullable="false" />
   </EntityType>
   <EntityType Name="CustomerSet">
     <Key>

@@ -16,17 +16,20 @@ namespace PizzaDB
                 //Product p1 = new Product
                 //{
                 //    Name = "Pizza Margherita",
-                //    Price = 7.50
+                //    Price = 7.50,
+                //    Amount = 100
                 //};
                 //Product p2 = new Product
                 //{
                 //    Name = "Pizza Marinara",
-                //    Price = 7.00
+                //    Price = 7.00,
+                //    Amount = 100
                 //};
                 //Product p3 = new Product
                 //{
                 //    Name = "Pizza Pepperoni",
-                //    Price = 8.00
+                //    Price = 8.00,
+                //    Amount = 100
                 //};
                 //dbDriver.ProductSet.Add(p1);
                 //dbDriver.ProductSet.Add(p2);

@@ -2,7 +2,7 @@
 -- --------------------------------------------------
 -- Entity Designer DDL Script for SQL Server 2005, 2008, 2012 and Azure
 -- --------------------------------------------------
--- Date Created: 05/28/2018 20:33:51
+-- Date Created: 05/29/2018 20:32:29
 -- Generated from EDMX file: C:\Users\Staples\source\repos\PizzaShop\PizzaDB\PizzaModel.edmx
 -- --------------------------------------------------
 
@@ -69,7 +69,8 @@ GO
 CREATE TABLE [dbo].[ProductSet] (
     [Id] int IDENTITY(1,1) NOT NULL,
     [Name] nvarchar(max)  NOT NULL,
-    [Price] float  NOT NULL
+    [Price] float  NOT NULL,
+    [Amount] int  NOT NULL
 );
 GO
 

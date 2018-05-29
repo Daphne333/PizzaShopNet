@@ -9,35 +9,17 @@ namespace PizzaDB
     public class UserModel
     {
         public string Register(string username)
-        {// probeer de if else weg te krijgen
+        {
             using (PizzaShopDBEntities dbDriver = new PizzaShopDBEntities())
             {
-                try
+
+                var customer = (from c in dbDriver.CustomerSet
+                                where c.Username == username
+                                select c).SingleOrDefault();
+
+                if (customer == null)
                 {
 
-                    if (dbDriver.CustomerSet.Single(Customer => Customer.Username == username).Username == username)
-                    {
-                        return "Username bestaat al!";
-                    }
-                    else
-                    {
-                        char[] charArray = username.ToCharArray();
-                        Array.Reverse(charArray);
-                        string password = new string(charArray);
-
-                        Customer c1 = new Customer
-                        {
-                            Username = username,
-                            Password = password
-                        };
-
-                        dbDriver.CustomerSet.Add(c1);
-                        dbDriver.SaveChanges();
-                        return password;
-                    }
-                }
-                catch (Exception)
-                {
                     char[] charArray = username.ToCharArray();
                     Array.Reverse(charArray);
                     string password = new string(charArray);
@@ -51,6 +33,10 @@ namespace PizzaDB
                     dbDriver.CustomerSet.Add(c1);
                     dbDriver.SaveChanges();
                     return password;
+                }
+                else
+                {
+                    return "Username already exists!";
                 }
             }
         }

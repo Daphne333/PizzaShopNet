@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using PizzaClientNew.PizzaReference;
 
 namespace PizzaClientNew
 {
@@ -20,19 +21,46 @@ namespace PizzaClientNew
     /// </summary>
     public partial class MainWindow : Window
     {
+        PizzaServiceClient pizzaProxy = new PizzaServiceClient();
+
         public MainWindow()
         {
             InitializeComponent();
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private void UsernameTextBox_TextChanged(object sender, TextChangedEventArgs e)
         {
 
         }
 
-        private void UsernameTextBox_TextChanged(object sender, TextChangedEventArgs e)
+        private void LoginButton_Click(object sender, RoutedEventArgs e)
         {
+            string username = UsernameTextBox.Text;
+            string password = PasswordBox.Password;
+            if (pizzaProxy.Login(username, password) == false)
+            {
+                LoginErrorMessage.Visibility = Visibility.Visible;
+            }
+            else
+            {
+                Shop shop = new Shop();
+                this.Hide();
+                shop.ShowDialog();
+            }
+        }
 
+        private void RegisterButton_Click(object sender, RoutedEventArgs e)
+        {
+            string username = UsernameTextBoxRegister.Text;
+            string password = pizzaProxy.Register(username);
+            if (password.Equals("Username already exists!"))
+            {
+                ErrorMessageRegister.Content = "Username already exists!";
+            }
+            else
+            {
+                ErrorMessageRegister.Content = "Your new password: " + password;
+            }
         }
     }
 }

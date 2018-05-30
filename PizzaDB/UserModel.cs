@@ -43,7 +43,7 @@ namespace PizzaDB
 
         public Boolean Login(string username, string password)
         {
-            if (username == null || password == null)
+            if (username == "" || password == "")
             {
                 return false;
             }

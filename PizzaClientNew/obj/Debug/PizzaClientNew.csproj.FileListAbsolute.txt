@@ -13,3 +13,5 @@ C:\Users\Staples\source\repos\PizzaShop\PizzaClientNew\obj\Debug\PizzaClientNew.
 C:\Users\Staples\source\repos\PizzaShop\PizzaClientNew\obj\Debug\PizzaClientNew.csproj.CoreCompileInputs.cache
 C:\Users\Staples\source\repos\PizzaShop\PizzaClientNew\obj\Debug\PizzaClientNew.exe
 C:\Users\Staples\source\repos\PizzaShop\PizzaClientNew\obj\Debug\PizzaClientNew.pdb
+C:\Users\Staples\source\repos\PizzaShop\PizzaClientNew\obj\Debug\Shop.g.cs
+C:\Users\Staples\source\repos\PizzaShop\PizzaClientNew\obj\Debug\Shop.baml

@@ -12,7 +12,7 @@
                 <TextBox x:Name="UsernameTextBox" HorizontalAlignment="Left" Height="23" Margin="123,23,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="174" TextChanged="UsernameTextBox_TextChanged"/>
                 <Label Content="Username" HorizontalAlignment="Left" Margin="18,23,0,0" VerticalAlignment="Top" Height="23" Width="69" RenderTransformOrigin="0.246,0.583"/>
                 <Label Content="Password" HorizontalAlignment="Left" Margin="18,58,0,0" VerticalAlignment="Top"/>
-                <Button x:Name="LoginButton" Content="Login" HorizontalAlignment="Left" Margin="222,116,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click"/>
+                <Button x:Name="LoginButton" Content="Login" HorizontalAlignment="Left" Margin="222,116,0,0" VerticalAlignment="Top" Width="75" Click="LoginButton_Click"/>
                 <Label x:Name="LoginErrorMessage" Content="Customer not registered!" HorizontalAlignment="Left" Margin="155,87,0,0" VerticalAlignment="Top" Foreground="Red" Visibility="Hidden" RenderTransformOrigin="0.996,-0.164"/>
                 <PasswordBox x:Name="PasswordBox" HorizontalAlignment="Left" Margin="123,58,0,0" VerticalAlignment="Top" Width="174" Height="23"/>
             </Grid>
@@ -31,7 +31,7 @@
                 <Label Content="Username" HorizontalAlignment="Left" Margin="23,23,0,0" VerticalAlignment="Top" Height="23" Width="69"/>
                 <TextBox x:Name="UsernameTextBoxRegister" HorizontalAlignment="Left" Height="23" Margin="123,23,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="174"/>
                 <Label x:Name="ErrorMessageRegister" Content="" HorizontalAlignment="Left" Margin="23,62,0,0" VerticalAlignment="Top" Visibility="Visible" Width="274"/>
-                <Button x:Name="RegisterButton" Content="Register" HorizontalAlignment="Left" Margin="222,116,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click"/>
+                <Button x:Name="RegisterButton" Content="Register" HorizontalAlignment="Left" Margin="222,116,0,0" VerticalAlignment="Top" Width="75" Click="RegisterButton_Click"/>
             </Grid>
         </TabItem>
     </TabControl>

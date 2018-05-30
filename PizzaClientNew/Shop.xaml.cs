@@ -23,5 +23,10 @@ namespace PizzaClientNew
         {
             InitializeComponent();
         }
+
+        private void BuyButton_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

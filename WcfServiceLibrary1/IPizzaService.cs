@@ -21,6 +21,11 @@ namespace PizzaServiceLibrary
         [OperationContract]
         List<Product> ProductList();
 
+        [OperationContract]
+        int GetUserId(string username);
+
+        [OperationContract]
+        Order NewOrder(int custid);
 
     }
 }

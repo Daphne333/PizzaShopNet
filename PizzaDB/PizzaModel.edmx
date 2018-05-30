@@ -56,6 +56,7 @@
     <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="Username" Type="nvarchar(max)" Nullable="false" />
     <Property Name="Password" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Money" Type="int" Nullable="false" />
   </EntityType>
   <Association Name="FK_OrderOrderEntry">
     <End Role="OrderSet" Type="PizzaShopDBModel.Store.OrderSet" Multiplicity="1" />
@@ -177,6 +178,7 @@
           <Property Name="Username" Type="String" Nullable="false" />
           <Property Name="Password" Type="String" Nullable="false" />
           <NavigationProperty Name="Order" Relationship="PizzaShopDBModel.CustomerOrder" FromRole="Customer" ToRole="Order" />
+          <Property Name="Money" Type="Int32" Nullable="false" />
         </EntityType>
         <Association Name="CustomerOrder">
           <End Type="PizzaShopDBModel.Customer" Role="Customer" Multiplicity="1" />
@@ -231,6 +233,7 @@
           <ScalarProperty Name="Id" ColumnName="Id" />
           <ScalarProperty Name="Username" ColumnName="Username" />
           <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="Money" ColumnName="Money" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

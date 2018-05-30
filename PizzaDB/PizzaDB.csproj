@@ -60,6 +60,7 @@
     <Compile Include="OrderEntry.cs">
       <DependentUpon>PizzaModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="OrderModel.cs" />
     <Compile Include="PizzaModel.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>

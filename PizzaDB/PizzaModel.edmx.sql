@@ -2,7 +2,7 @@
 -- --------------------------------------------------
 -- Entity Designer DDL Script for SQL Server 2005, 2008, 2012 and Azure
 -- --------------------------------------------------
--- Date Created: 05/29/2018 20:32:29
+-- Date Created: 05/30/2018 22:47:23
 -- Generated from EDMX file: C:\Users\Staples\source\repos\PizzaShop\PizzaDB\PizzaModel.edmx
 -- --------------------------------------------------
 
@@ -78,7 +78,8 @@ GO
 CREATE TABLE [dbo].[CustomerSet] (
     [Id] int IDENTITY(1,1) NOT NULL,
     [Username] nvarchar(max)  NOT NULL,
-    [Password] nvarchar(max)  NOT NULL
+    [Password] nvarchar(max)  NOT NULL,
+    [Money] int  NOT NULL
 );
 GO
 

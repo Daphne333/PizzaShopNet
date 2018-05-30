@@ -21,11 +21,17 @@ namespace PizzaClientNew
     public partial class Shop : Window
     {
         PizzaServiceClient pizzaproxy = new PizzaServiceClient();
-        public Shop()
+        private int userid;
+        private Order orderObject;
+
+        public Shop(string username)
         {
             InitializeComponent();
 
-            
+            userid = pizzaproxy.GetUserId(username);
+            orderObject = pizzaproxy.NewOrder(userid);
+
+
             foreach (Product p in pizzaproxy.ProductList())
             {
                 ListBoxItem itm = new ListBoxItem();
@@ -39,8 +45,8 @@ namespace PizzaClientNew
 
         private void BuyButton_Click(object sender, RoutedEventArgs e)
         {
-            string selTag = ((TextBox)ProductsBox.SelectedItem).Tag.ToString();
-            MessageBox.Show(selTag);
+            string itemTag = ((ListBoxItem)ProductsBox.SelectedItem).Tag.ToString();
+            
         }
 
         private void RefreshButton_Click(object sender, RoutedEventArgs e)

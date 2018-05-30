@@ -56,5 +56,17 @@ namespace PizzaDB
             }
 
         }
+
+        public int GetUserId(string username)
+        {
+            using (PizzaShopDBEntities dbDriver = new PizzaShopDBEntities())
+            {
+                var user = (from u in dbDriver.CustomerSet
+                              where u.Username == username
+                              select u).SingleOrDefault();
+
+                return user.Id;
+            }
+        }
     }
 }

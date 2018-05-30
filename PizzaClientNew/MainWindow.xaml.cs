@@ -43,7 +43,7 @@ namespace PizzaClientNew
             }
             else
             {
-                Shop shop = new Shop();
+                Shop shop = new Shop(username);
                 this.Hide();
                 shop.ShowDialog();
             }

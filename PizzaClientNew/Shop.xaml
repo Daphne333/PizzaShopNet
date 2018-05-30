@@ -10,22 +10,10 @@
         <Label Content="Inventory" HorizontalAlignment="Left" Margin="50,24,0,0" VerticalAlignment="Top"/>
         <Label Content="Products" HorizontalAlignment="Left" Margin="310,24,0,0" VerticalAlignment="Top"/>
         <Button x:Name="BuyButton" Content="Buy" HorizontalAlignment="Left" Margin="310,225,0,0" VerticalAlignment="Top" Width="75" Click="BuyButton_Click"/>
-        <Button x:Name="RefreshButton" Content="Refresh" HorizontalAlignment="Left" Margin="435,225,0,0" VerticalAlignment="Top" Width="75"/>
-        <ListView x:Name="InventoryListView" HorizontalAlignment="Left" Height="120" Margin="50,70,0,0" VerticalAlignment="Top" Width="190">
-            <ListView.View>
-                <GridView>
-                    <GridViewColumn/>
-                </GridView>
-            </ListView.View>
-        </ListView>
-        <ListView x:Name="ProductsListView" HorizontalAlignment="Left" Height="120" Margin="310,70,0,0" VerticalAlignment="Top" Width="200">
-            <ListView.View>
-                <GridView>
-                    <GridViewColumn/>
-                </GridView>
-            </ListView.View>
-        </ListView>
+        <Button x:Name="RefreshButton" Content="Refresh" HorizontalAlignment="Left" Margin="435,225,0,0" VerticalAlignment="Top" Width="75" Click="RefreshButton_Click"/>
         <Label x:Name="MoneyLeftMessage" Content="Money left: " HorizontalAlignment="Left" Margin="50,214,0,0" VerticalAlignment="Top"/>
+        <ListBox x:Name="InventoryBox" HorizontalAlignment="Left" Height="145" Margin="50,65,0,0" VerticalAlignment="Top" Width="150"/>
+        <ListBox x:Name="ProductsBox" HorizontalAlignment="Left" Height="145" Margin="310,65,0,0" VerticalAlignment="Top" Width="145"/>
 
     </Grid>
 </Window>

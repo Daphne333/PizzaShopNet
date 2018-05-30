@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:PizzaClientNew"
         mc:Ignorable="d"
         Title="Login/Register" Height="221" Width="343.121" Background="#FFFAFAFA">
-    <TabControl HorizontalAlignment="Left" Height="307" Margin="0,10,0,-2.6" VerticalAlignment="Top" Width="564">
+    <TabControl HorizontalAlignment="Left" Height="306" Margin="0,10,-231.2,-124.8" VerticalAlignment="Top" Width="568">
         <TabItem x:Name="Login" Header="Login">
             <Grid Background="#FFD9B76E" Margin="0,0,207.6,106.2">
                 <TextBox x:Name="UsernameTextBox" HorizontalAlignment="Left" Height="23" Margin="123,23,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="174" TextChanged="UsernameTextBox_TextChanged"/>
@@ -24,7 +24,7 @@
                     <GradientStop Color="White" Offset="1"/>
                 </LinearGradientBrush>
             </TabItem.Background>
-            <Grid Background="#FFD9B76E">
+            <Grid Background="#FFD9B76E" Margin="0,0,224.6,119.2">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition/>
                 </Grid.ColumnDefinitions>

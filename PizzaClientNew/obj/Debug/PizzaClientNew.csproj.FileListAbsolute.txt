@@ -1,0 +1,15 @@
+C:\Users\Staples\source\repos\PizzaShop\PizzaClientNew\bin\Debug\PizzaClientNew.exe.config
+C:\Users\Staples\source\repos\PizzaShop\PizzaClientNew\bin\Debug\PizzaClientNew.exe
+C:\Users\Staples\source\repos\PizzaShop\PizzaClientNew\bin\Debug\PizzaClientNew.pdb
+C:\Users\Staples\source\repos\PizzaShop\PizzaClientNew\obj\Debug\PizzaClientNew.csprojAssemblyReference.cache
+C:\Users\Staples\source\repos\PizzaShop\PizzaClientNew\obj\Debug\MainWindow.g.cs
+C:\Users\Staples\source\repos\PizzaShop\PizzaClientNew\obj\Debug\App.g.cs
+C:\Users\Staples\source\repos\PizzaShop\PizzaClientNew\obj\Debug\PizzaClientNew_MarkupCompile.cache
+C:\Users\Staples\source\repos\PizzaShop\PizzaClientNew\obj\Debug\PizzaClientNew_MarkupCompile.lref
+C:\Users\Staples\source\repos\PizzaShop\PizzaClientNew\obj\Debug\MainWindow.baml
+C:\Users\Staples\source\repos\PizzaShop\PizzaClientNew\obj\Debug\PizzaClientNew.g.resources
+C:\Users\Staples\source\repos\PizzaShop\PizzaClientNew\obj\Debug\PizzaClientNew.Properties.Resources.resources
+C:\Users\Staples\source\repos\PizzaShop\PizzaClientNew\obj\Debug\PizzaClientNew.csproj.GenerateResource.cache
+C:\Users\Staples\source\repos\PizzaShop\PizzaClientNew\obj\Debug\PizzaClientNew.csproj.CoreCompileInputs.cache
+C:\Users\Staples\source\repos\PizzaShop\PizzaClientNew\obj\Debug\PizzaClientNew.exe
+C:\Users\Staples\source\repos\PizzaShop\PizzaClientNew\obj\Debug\PizzaClientNew.pdb

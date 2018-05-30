@@ -31,20 +31,29 @@ namespace PizzaDB
                 //    Price = 8.00,
                 //    Amount = 100
                 //};
+                //Product p4 = new Product
+                //{
+                //    Name = "Pizza Hawaii",
+                //    Price = 8.00,
+                //    Amount = 0
+                //};
                 //dbDriver.ProductSet.Add(p1);
                 //dbDriver.ProductSet.Add(p2);
                 //dbDriver.ProductSet.Add(p3);
+                //dbDriver.ProductSet.Add(p4);
                 //dbDriver.SaveChanges();
 
                 //Customer c1 = new Customer
                 //{
                 //    Username = "Admin",
-                //    Password = "nimdA"
+                //    Password = "nimdA",
+                //    Money = 4
                 //};
                 //Customer c2 = new Customer
                 //{
                 //    Username = "Daphne",
-                //    Password = "enhpaD"
+                //    Password = "enhpaD",
+                //    Money = 100
                 //};
 
                 //dbDriver.CustomerSet.Add(c1);

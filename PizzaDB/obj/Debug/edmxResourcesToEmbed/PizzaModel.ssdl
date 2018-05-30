@@ -51,6 +51,7 @@
     <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="Username" Type="nvarchar(max)" Nullable="false" />
     <Property Name="Password" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Money" Type="int" Nullable="false" />
   </EntityType>
   <Association Name="FK_OrderOrderEntry">
     <End Role="OrderSet" Type="PizzaShopDBModel.Store.OrderSet" Multiplicity="1" />

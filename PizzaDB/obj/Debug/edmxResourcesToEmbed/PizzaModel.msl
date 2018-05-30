@@ -36,6 +36,7 @@
           <ScalarProperty Name="Id" ColumnName="Id" />
           <ScalarProperty Name="Username" ColumnName="Username" />
           <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="Money" ColumnName="Money" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

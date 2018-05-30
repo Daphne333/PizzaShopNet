@@ -27,7 +27,8 @@ namespace PizzaDB
                     Customer c1 = new Customer
                     {
                         Username = username,
-                        Password = password
+                        Password = password,
+                        Money = 10
                     };
 
                     dbDriver.CustomerSet.Add(c1);
@@ -66,6 +67,18 @@ namespace PizzaDB
                               select u).SingleOrDefault();
 
                 return user.Id;
+            }
+        }
+
+        public Customer GetCustomerById(int userid)
+        {
+            using (PizzaShopDBEntities dbDriver = new PizzaShopDBEntities())
+            {
+                var user = (from u in dbDriver.CustomerSet
+                            where u.Id == userid
+                            select u).SingleOrDefault();
+
+                return user;
             }
         }
     }

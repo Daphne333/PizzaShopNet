@@ -70,4 +70,18 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
+  <xs:element name="GetCustomerById">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="custid" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetCustomerByIdResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/PizzaDB" minOccurs="0" name="GetCustomerByIdResult" nillable="true" type="q3:Customer" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
 </xs:schema>

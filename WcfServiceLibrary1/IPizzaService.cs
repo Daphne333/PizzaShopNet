@@ -27,5 +27,7 @@ namespace PizzaServiceLibrary
         [OperationContract]
         Order NewOrder(int custid);
 
+        [OperationContract]
+        Customer GetCustomerById(int custid);
     }
 }

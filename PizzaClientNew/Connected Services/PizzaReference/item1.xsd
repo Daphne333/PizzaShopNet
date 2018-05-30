@@ -28,6 +28,7 @@
   <xs:complexType name="Customer">
     <xs:sequence>
       <xs:element minOccurs="0" name="Id" type="xs:int" />
+      <xs:element minOccurs="0" name="Money" type="xs:int" />
       <xs:element minOccurs="0" name="Order" nillable="true" type="tns:ArrayOfOrder" />
       <xs:element minOccurs="0" name="Password" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="Username" nillable="true" type="xs:string" />

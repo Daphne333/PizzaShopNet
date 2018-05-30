@@ -23,6 +23,8 @@ namespace PizzaClientNew
         PizzaServiceClient pizzaproxy = new PizzaServiceClient();
         private int userid;
         private Order orderObject;
+        private int moneyleft;
+        private Customer userObject;
 
         public Shop(string username)
         {
@@ -30,15 +32,23 @@ namespace PizzaClientNew
 
             userid = pizzaproxy.GetUserId(username);
             orderObject = pizzaproxy.NewOrder(userid);
-
+            userObject = pizzaproxy.GetCustomerById(userid);
+            moneyleft = userObject.Money;
+            MoneyLeftMessage.Content += moneyleft.ToString();
 
             foreach (Product p in pizzaproxy.ProductList())
             {
                 ListBoxItem itm = new ListBoxItem();
                 itm.Tag = p.Id;
-                itm.Content = p.Name + ": " + p.Price + ": " + p.Amount.ToString() + " beschikbaar";
-                ProductsBox.Items.Add(itm);
+                if(p.Amount > 0)
+                {
+                    itm.Content = p.Name + ": " + p.Price + " euro: " + p.Amount.ToString() + " beschikbaar";
+                    ProductsBox.Items.Add(itm);
+                } 
             }
+
+
+
             
 
         }
@@ -57,8 +67,11 @@ namespace PizzaClientNew
             {
                 ListBoxItem itm = new ListBoxItem();
                 itm.Tag = p.Id;
-                itm.Content = p.Name + ": " + p.Price + ": " + p.Amount.ToString() + " beschikbaar";
-                ProductsBox.Items.Add(itm);
+                if (p.Amount > 0)
+                {
+                    itm.Content = p.Name + ": " + p.Price + " euro: " + p.Amount.ToString() + " beschikbaar";
+                    ProductsBox.Items.Add(itm);
+                }
             }
         }
     }

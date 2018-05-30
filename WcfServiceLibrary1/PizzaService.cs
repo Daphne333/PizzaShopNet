@@ -41,5 +41,10 @@ namespace PizzaServiceLibrary
             return ordermodel.NewOrder(custid);
         }
 
+        public Customer GetCustomerById(int custid)
+        {
+            return usermodel.GetCustomerById(custid);
+        }
+
     }
 }

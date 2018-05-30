@@ -37,6 +37,12 @@
   <wsdl:message name="IPizzaService_NewOrder_OutputMessage">
     <wsdl:part name="parameters" element="tns:NewOrderResponse" />
   </wsdl:message>
+  <wsdl:message name="IPizzaService_GetCustomerById_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetCustomerById" />
+  </wsdl:message>
+  <wsdl:message name="IPizzaService_GetCustomerById_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetCustomerByIdResponse" />
+  </wsdl:message>
   <wsdl:portType name="IPizzaService">
     <wsdl:operation name="Register">
       <wsdl:input wsaw:Action="http://tempuri.org/IPizzaService/Register" message="tns:IPizzaService_Register_InputMessage" />
@@ -57,6 +63,10 @@
     <wsdl:operation name="NewOrder">
       <wsdl:input wsaw:Action="http://tempuri.org/IPizzaService/NewOrder" message="tns:IPizzaService_NewOrder_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IPizzaService/NewOrderResponse" message="tns:IPizzaService_NewOrder_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetCustomerById">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPizzaService/GetCustomerById" message="tns:IPizzaService_GetCustomerById_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPizzaService/GetCustomerByIdResponse" message="tns:IPizzaService_GetCustomerById_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_IPizzaService" type="tns:IPizzaService">
@@ -99,6 +109,15 @@
     </wsdl:operation>
     <wsdl:operation name="NewOrder">
       <soap:operation soapAction="http://tempuri.org/IPizzaService/NewOrder" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetCustomerById">
+      <soap:operation soapAction="http://tempuri.org/IPizzaService/GetCustomerById" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

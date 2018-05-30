@@ -228,6 +228,9 @@ namespace PizzaClientNew.PizzaReference {
         private int IdField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int MoneyField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private PizzaClientNew.PizzaReference.Order[] OrderField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
@@ -255,6 +258,19 @@ namespace PizzaClientNew.PizzaReference {
                 if ((this.IdField.Equals(value) != true)) {
                     this.IdField = value;
                     this.RaisePropertyChanged("Id");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int Money {
+            get {
+                return this.MoneyField;
+            }
+            set {
+                if ((this.MoneyField.Equals(value) != true)) {
+                    this.MoneyField = value;
+                    this.RaisePropertyChanged("Money");
                 }
             }
         }
@@ -466,6 +482,12 @@ namespace PizzaClientNew.PizzaReference {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPizzaService/NewOrder", ReplyAction="http://tempuri.org/IPizzaService/NewOrderResponse")]
         System.Threading.Tasks.Task<PizzaClientNew.PizzaReference.Order> NewOrderAsync(int custid);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPizzaService/GetCustomerById", ReplyAction="http://tempuri.org/IPizzaService/GetCustomerByIdResponse")]
+        PizzaClientNew.PizzaReference.Customer GetCustomerById(int custid);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPizzaService/GetCustomerById", ReplyAction="http://tempuri.org/IPizzaService/GetCustomerByIdResponse")]
+        System.Threading.Tasks.Task<PizzaClientNew.PizzaReference.Customer> GetCustomerByIdAsync(int custid);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -533,6 +555,14 @@ namespace PizzaClientNew.PizzaReference {
         
         public System.Threading.Tasks.Task<PizzaClientNew.PizzaReference.Order> NewOrderAsync(int custid) {
             return base.Channel.NewOrderAsync(custid);
+        }
+        
+        public PizzaClientNew.PizzaReference.Customer GetCustomerById(int custid) {
+            return base.Channel.GetCustomerById(custid);
+        }
+        
+        public System.Threading.Tasks.Task<PizzaClientNew.PizzaReference.Customer> GetCustomerByIdAsync(int custid) {
+            return base.Channel.GetCustomerByIdAsync(custid);
         }
     }
 }

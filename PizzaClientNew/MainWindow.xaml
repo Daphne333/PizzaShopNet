@@ -29,7 +29,7 @@
                     <ColumnDefinition/>
                 </Grid.ColumnDefinitions>
                 <Label Content="Username" HorizontalAlignment="Left" Margin="23,23,0,0" VerticalAlignment="Top" Height="23" Width="69"/>
-                <TextBox x:Name="UsernameTextBoxRegister" HorizontalAlignment="Left" Height="23" Margin="123,23,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="174"/>
+                <TextBox x:Name="UsernameTextBoxRegister" HorizontalAlignment="Left" Height="23" Margin="123,23,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="174"/>
                 <Label x:Name="ErrorMessageRegister" Content="" HorizontalAlignment="Left" Margin="23,62,0,0" VerticalAlignment="Top" Visibility="Visible" Width="274"/>
                 <Button x:Name="RegisterButton" Content="Register" HorizontalAlignment="Left" Margin="222,116,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click"/>
             </Grid>

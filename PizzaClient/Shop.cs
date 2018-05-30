@@ -20,7 +20,7 @@ namespace PizzaClient
         {
             InitializeComponent();
 
-            PizzaLijstProducts = pizzaProxy.ProductList();
+            //PizzaLijstProducts = pizzaProxy.ProductList();
         }
 
         private void Inventory_Click(object sender, EventArgs e)

@@ -14,8 +14,12 @@ namespace PizzaHost
         {
             using (ServiceHost host = new ServiceHost(typeof(PizzaService)))
             {
+                host.OpenTimeout = new TimeSpan(0, 10, 0);
+                host.CloseTimeout = new TimeSpan(0, 10, 0);
+                
                 host.Open();
                 Console.WriteLine("Service ready");
+
                 Console.ReadKey();
             }
         }

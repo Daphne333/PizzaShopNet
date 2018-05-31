@@ -9,6 +9,10 @@ using PizzaDB;
 namespace PizzaServiceLibrary
 {
     // NOTE: You can use the "Rename" command on the "Refactor" menu to change the class name "PizzaService" in both code and config file together.
+
+    [ServiceBehavior(  InstanceContextMode = InstanceContextMode.Single,
+  ConcurrencyMode = ConcurrencyMode.Reentrant)]
+
     public class PizzaService : IPizzaService
     {
 

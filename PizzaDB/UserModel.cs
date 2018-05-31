@@ -74,6 +74,7 @@ namespace PizzaDB
         {
             using (PizzaShopDBEntities dbDriver = new PizzaShopDBEntities())
             {
+                dbDriver.Configuration.ProxyCreationEnabled = false;
                 var user = (from u in dbDriver.CustomerSet
                             where u.Id == userid
                             select u).SingleOrDefault();

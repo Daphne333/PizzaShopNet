@@ -32,7 +32,19 @@ namespace PizzaClientNew
 
             userid = pizzaproxy.GetUserId(username);
             orderObject = pizzaproxy.NewOrder(userid);
-            userObject = pizzaproxy.GetCustomerById(userid);
+
+            try
+            {
+                userObject = pizzaproxy.GetCustomerById(userid);
+            }
+            catch (TimeoutException t)
+            {
+                MessageBox.Show(t.Message);
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show("laatste");
+            }
             moneyleft = userObject.Money;
             MoneyLeftMessage.Content += moneyleft.ToString();
 

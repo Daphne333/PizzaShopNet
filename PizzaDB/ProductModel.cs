@@ -30,7 +30,7 @@ namespace PizzaDB
         {
            using (PizzaShopDBEntities dbDriver = new PizzaShopDBEntities())
                 {
-                    //dbDriver.Configuration.ProxyCreationEnabled = false;
+                    dbDriver.Configuration.ProxyCreationEnabled = false;
                     var product = (from p in dbDriver.ProductSet
                                 where p.Id == productid
                                 select p).SingleOrDefault();

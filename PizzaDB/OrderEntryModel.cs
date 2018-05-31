@@ -12,12 +12,18 @@ namespace PizzaDB
         {
             using (PizzaShopDBEntities dbDriver = new PizzaShopDBEntities())
             {
-                var orderentry = (from o in dbDriver.OrderEntrySet
+                OrderEntry orderentry = (from o in dbDriver.OrderEntrySet
                                   where o.OrderId == orderid && o.Product_Id == productid
                                 select o).SingleOrDefault();
-                var money = from customer in dbDriver.CustomerSet
-                                  where customer.Id.Equals(custid)
-                                  select customer.Money;
+                var money = from c in dbDriver.CustomerSet
+                                  where c.Id.Equals(custid)
+                                  select c.Money;
+                Customer cust = (from c in dbDriver.CustomerSet
+                                 where c.Id == custid
+                                 select c).SingleOrDefault();
+                Product product = (from p in dbDriver.ProductSet
+                                   where p.Id == productid
+                                   select p).SingleOrDefault();
 
                 if (orderentry == null) {
                     OrderEntry oe = new OrderEntry

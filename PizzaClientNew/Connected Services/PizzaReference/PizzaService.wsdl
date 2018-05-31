@@ -43,6 +43,18 @@
   <wsdl:message name="IPizzaService_GetCustomerById_OutputMessage">
     <wsdl:part name="parameters" element="tns:GetCustomerByIdResponse" />
   </wsdl:message>
+  <wsdl:message name="IPizzaService_Buy_InputMessage">
+    <wsdl:part name="parameters" element="tns:Buy" />
+  </wsdl:message>
+  <wsdl:message name="IPizzaService_Buy_OutputMessage">
+    <wsdl:part name="parameters" element="tns:BuyResponse" />
+  </wsdl:message>
+  <wsdl:message name="IPizzaService_GetProductById_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetProductById" />
+  </wsdl:message>
+  <wsdl:message name="IPizzaService_GetProductById_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetProductByIdResponse" />
+  </wsdl:message>
   <wsdl:portType name="IPizzaService">
     <wsdl:operation name="Register">
       <wsdl:input wsaw:Action="http://tempuri.org/IPizzaService/Register" message="tns:IPizzaService_Register_InputMessage" />
@@ -67,6 +79,14 @@
     <wsdl:operation name="GetCustomerById">
       <wsdl:input wsaw:Action="http://tempuri.org/IPizzaService/GetCustomerById" message="tns:IPizzaService_GetCustomerById_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IPizzaService/GetCustomerByIdResponse" message="tns:IPizzaService_GetCustomerById_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Buy">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPizzaService/Buy" message="tns:IPizzaService_Buy_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPizzaService/BuyResponse" message="tns:IPizzaService_Buy_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetProductById">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPizzaService/GetProductById" message="tns:IPizzaService_GetProductById_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPizzaService/GetProductByIdResponse" message="tns:IPizzaService_GetProductById_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_IPizzaService" type="tns:IPizzaService">
@@ -118,6 +138,24 @@
     </wsdl:operation>
     <wsdl:operation name="GetCustomerById">
       <soap:operation soapAction="http://tempuri.org/IPizzaService/GetCustomerById" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Buy">
+      <soap:operation soapAction="http://tempuri.org/IPizzaService/Buy" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetProductById">
+      <soap:operation soapAction="http://tempuri.org/IPizzaService/GetProductById" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

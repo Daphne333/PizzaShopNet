@@ -488,6 +488,18 @@ namespace PizzaClientNew.PizzaReference {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPizzaService/GetCustomerById", ReplyAction="http://tempuri.org/IPizzaService/GetCustomerByIdResponse")]
         System.Threading.Tasks.Task<PizzaClientNew.PizzaReference.Customer> GetCustomerByIdAsync(int custid);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPizzaService/Buy", ReplyAction="http://tempuri.org/IPizzaService/BuyResponse")]
+        PizzaClientNew.PizzaReference.OrderEntry Buy(int orderid, int productid, int custid);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPizzaService/Buy", ReplyAction="http://tempuri.org/IPizzaService/BuyResponse")]
+        System.Threading.Tasks.Task<PizzaClientNew.PizzaReference.OrderEntry> BuyAsync(int orderid, int productid, int custid);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPizzaService/GetProductById", ReplyAction="http://tempuri.org/IPizzaService/GetProductByIdResponse")]
+        PizzaClientNew.PizzaReference.Product GetProductById(int productid);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPizzaService/GetProductById", ReplyAction="http://tempuri.org/IPizzaService/GetProductByIdResponse")]
+        System.Threading.Tasks.Task<PizzaClientNew.PizzaReference.Product> GetProductByIdAsync(int productid);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -563,6 +575,22 @@ namespace PizzaClientNew.PizzaReference {
         
         public System.Threading.Tasks.Task<PizzaClientNew.PizzaReference.Customer> GetCustomerByIdAsync(int custid) {
             return base.Channel.GetCustomerByIdAsync(custid);
+        }
+        
+        public PizzaClientNew.PizzaReference.OrderEntry Buy(int orderid, int productid, int custid) {
+            return base.Channel.Buy(orderid, productid, custid);
+        }
+        
+        public System.Threading.Tasks.Task<PizzaClientNew.PizzaReference.OrderEntry> BuyAsync(int orderid, int productid, int custid) {
+            return base.Channel.BuyAsync(orderid, productid, custid);
+        }
+        
+        public PizzaClientNew.PizzaReference.Product GetProductById(int productid) {
+            return base.Channel.GetProductById(productid);
+        }
+        
+        public System.Threading.Tasks.Task<PizzaClientNew.PizzaReference.Product> GetProductByIdAsync(int productid) {
+            return base.Channel.GetProductByIdAsync(productid);
         }
     }
 }

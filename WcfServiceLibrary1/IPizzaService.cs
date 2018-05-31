@@ -29,5 +29,11 @@ namespace PizzaServiceLibrary
 
         [OperationContract]
         Customer GetCustomerById(int custid);
+
+        [OperationContract]
+        OrderEntry Buy(int orderid, int productid, int custid);
+
+        [OperationContract]
+        Product GetProductById(int productid);
     }
 }

@@ -118,6 +118,9 @@
     <None Include="Connected Services\PizzaReference\PizzaClientNew.PizzaReference.Order.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
+    <None Include="Connected Services\PizzaReference\PizzaClientNew.PizzaReference.OrderEntry.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
     <None Include="Connected Services\PizzaReference\PizzaClientNew.PizzaReference.Product.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>

@@ -18,7 +18,8 @@ namespace PizzaServiceLibrary
 
         public static UserModel usermodel = new UserModel();
         public static ProductModel productmodel = new ProductModel();
-        public static OrderModel ordermodel = new PizzaDB.OrderModel();
+        public static OrderModel ordermodel = new OrderModel();
+        public static OrderEntryModel orderentrymodel = new OrderEntryModel();
         
         public string Register(string username)
         {
@@ -48,6 +49,16 @@ namespace PizzaServiceLibrary
         public Customer GetCustomerById(int custid)
         {
             return usermodel.GetCustomerById(custid);
+        }
+
+        public OrderEntry Buy(int orderid, int productid, int custid)
+        {
+            return orderentrymodel.Buy(orderid, productid, custid);
+        }
+
+        public Product GetProductById(int productid)
+        {
+            return productmodel.GetProductById(productid);
         }
 
     }

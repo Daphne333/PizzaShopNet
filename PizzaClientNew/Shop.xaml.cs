@@ -25,6 +25,8 @@ namespace PizzaClientNew
         private Order orderObject;
         private int moneyleft;
         private Customer userObject;
+        private OrderEntry orderEntryObject;
+        
 
         public Shop(string username)
         {
@@ -67,7 +69,20 @@ namespace PizzaClientNew
 
         private void BuyButton_Click(object sender, RoutedEventArgs e)
         {
-            string itemTag = ((ListBoxItem)ProductsBox.SelectedItem).Tag.ToString();
+            string productidS = ((ListBoxItem)ProductsBox.SelectedItem).Tag.ToString();
+            int productid = Int32.Parse(productidS);
+            int orderid = orderObject.Id;
+            Product productObject = pizzaproxy.GetProductById(productid);
+            if(userObject.Money > productObject.Price)
+            {
+                OrderEntry oe = pizzaproxy.Buy(orderid, productid, userid);
+                ListBoxItem oeitm = new ListBoxItem();
+                oeitm.Tag = productid;
+                oeitm.Content = productObject.Name + ", " + oe.Amount;
+                InventoryBox.Items.Add(oeitm);
+            }
+             
+            
             
         }
 

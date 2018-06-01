@@ -228,7 +228,7 @@ namespace PizzaClientNew.PizzaReference {
         private int IdField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private int MoneyField;
+        private double MoneyField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private PizzaClientNew.PizzaReference.Order[] OrderField;
@@ -263,7 +263,7 @@ namespace PizzaClientNew.PizzaReference {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public int Money {
+        public double Money {
             get {
                 return this.MoneyField;
             }

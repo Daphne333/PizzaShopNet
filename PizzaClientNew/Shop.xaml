@@ -11,7 +11,7 @@
         <Label Content="Products" HorizontalAlignment="Left" Margin="310,24,0,0" VerticalAlignment="Top"/>
         <Button x:Name="BuyButton" Content="Buy" HorizontalAlignment="Left" Margin="310,225,0,0" VerticalAlignment="Top" Width="75" Click="BuyButton_Click"/>
         <Button x:Name="RefreshButton" Content="Refresh" HorizontalAlignment="Left" Margin="435,225,0,0" VerticalAlignment="Top" Width="75" Click="RefreshButton_Click"/>
-        <Label x:Name="MoneyLeftMessage" Content="Money left: " HorizontalAlignment="Left" Margin="50,214,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="MoneyLeftMessage" Content="" HorizontalAlignment="Left" Margin="50,214,0,0" VerticalAlignment="Top"/>
         <ListBox x:Name="InventoryBox" HorizontalAlignment="Left" Height="145" Margin="50,65,0,0" VerticalAlignment="Top" Width="160"/>
         <ListBox x:Name="ProductsBox" HorizontalAlignment="Left" Height="145" Margin="310,65,0,0" VerticalAlignment="Top" Width="160"/>
 

@@ -80,7 +80,7 @@
     <Property Name="Username" Type="String" Nullable="false" />
     <Property Name="Password" Type="String" Nullable="false" />
     <NavigationProperty Name="Order" Relationship="PizzaShopDBModel.CustomerOrder" FromRole="Customer" ToRole="Order" />
-    <Property Name="Money" Type="Int32" Nullable="false" />
+    <Property Name="Money" Type="Double" Nullable="false" />
   </EntityType>
   <Association Name="CustomerOrder">
     <End Type="PizzaShopDBModel.Customer" Role="Customer" Multiplicity="1" />

@@ -23,7 +23,7 @@ namespace PizzaClientNew
         PizzaServiceClient pizzaproxy = new PizzaServiceClient();
         private int userid;
         private Order orderObject;
-        private int moneyleft;
+        private double moneyleft;
         private Customer userObject;
         private OrderEntry orderEntryObject;
         
@@ -34,21 +34,9 @@ namespace PizzaClientNew
 
             userid = pizzaproxy.GetUserId(username);
             orderObject = pizzaproxy.NewOrder(userid);
-
-            try
-            {
-                userObject = pizzaproxy.GetCustomerById(userid);
-            }
-            catch (TimeoutException t)
-            {
-                MessageBox.Show(t.Message);
-            }
-            catch (Exception e)
-            {
-                MessageBox.Show("laatste");
-            }
+            userObject = pizzaproxy.GetCustomerById(userid);
             moneyleft = userObject.Money;
-            MoneyLeftMessage.Content += moneyleft.ToString();
+            MoneyLeftMessage.Content = "Money left: "+ moneyleft.ToString();
 
             foreach (Product p in pizzaproxy.ProductList())
             {
@@ -80,14 +68,51 @@ namespace PizzaClientNew
                 oeitm.Tag = productid;
                 oeitm.Content = productObject.Name + ", " + oe.Amount;
                 InventoryBox.Items.Add(oeitm);
+
+                //Refresh
+
+                MoneyLeftMessage.Content = "Money left: " + moneyleft.ToString();
+                ProductsBox.Items.Clear();
+
+                foreach (Product p in pizzaproxy.ProductList())
+                {
+                    ListBoxItem itm = new ListBoxItem();
+                    itm.Tag = p.Id;
+                    if (p.Amount > 0)
+                    {
+                        itm.Content = p.Name + ": " + p.Price + " euro: " + p.Amount.ToString() + " beschikbaar";
+                        ProductsBox.Items.Add(itm);
+                    }
+                }
             }
-             
+            else
+            {
+                MessageBox.Show("Not enough money!");
+
+                //Refresh
+
+                MoneyLeftMessage.Content = "Money left: " + moneyleft.ToString();
+                ProductsBox.Items.Clear();
+
+                foreach (Product p in pizzaproxy.ProductList())
+                {
+                    ListBoxItem itm = new ListBoxItem();
+                    itm.Tag = p.Id;
+                    if (p.Amount > 0)
+                    {
+                        itm.Content = p.Name + ": " + p.Price + " euro: " + p.Amount.ToString() + " beschikbaar";
+                        ProductsBox.Items.Add(itm);
+                    }
+                }
+            }
             
             
         }
 
         private void RefreshButton_Click(object sender, RoutedEventArgs e)
         {
+
+            MoneyLeftMessage.Content = "Money left: " + moneyleft.ToString();
             ProductsBox.Items.Clear();
 
             foreach (Product p in pizzaproxy.ProductList())

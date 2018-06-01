@@ -15,9 +15,6 @@ namespace PizzaDB
                 OrderEntry orderentry = (from o in dbDriver.OrderEntrySet
                                   where o.OrderId == orderid && o.Product_Id == productid
                                 select o).SingleOrDefault();
-                var money = from c in dbDriver.CustomerSet
-                                  where c.Id.Equals(custid)
-                                  select c.Money;
                 Customer cust = (from c in dbDriver.CustomerSet
                                  where c.Id == custid
                                  select c).SingleOrDefault();
@@ -33,12 +30,16 @@ namespace PizzaDB
                     Product_Id = productid
                 };
                     dbDriver.OrderEntrySet.Add(oe);
+                    cust.Money = cust.Money - product.Price;
+                    product.Amount -= 1;
                     dbDriver.SaveChanges();
                     return oe;
                 }
                 else
                 {
                     orderentry.Amount += 1;
+                    cust.Money = cust.Money - product.Price;
+                    product.Amount -= 1;
                     dbDriver.SaveChanges();
                     return orderentry;
                 }

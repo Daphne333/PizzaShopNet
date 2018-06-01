@@ -47,7 +47,7 @@ namespace PizzaDB
                 //{
                 //    Username = "Admin",
                 //    Password = "nimdA",
-                //    Money = 4
+                //    Money = 20
                 //};
                 //Customer c2 = new Customer
                 //{
@@ -56,8 +56,16 @@ namespace PizzaDB
                 //    Money = 100
                 //};
 
+                //Customer c3 = new Customer
+                //{
+                //    Username = "a",
+                //    Password = "a",
+                //    Money = 100
+                //};
+
                 //dbDriver.CustomerSet.Add(c1);
                 //dbDriver.CustomerSet.Add(c2);
+                //dbDriver.CustomerSet.Add(c3);
                 //dbDriver.SaveChanges();
 
 

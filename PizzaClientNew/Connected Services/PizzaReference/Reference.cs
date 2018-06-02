@@ -500,6 +500,12 @@ namespace PizzaClientNew.PizzaReference {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPizzaService/GetProductById", ReplyAction="http://tempuri.org/IPizzaService/GetProductByIdResponse")]
         System.Threading.Tasks.Task<PizzaClientNew.PizzaReference.Product> GetProductByIdAsync(int productid);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPizzaService/OrderEntryList", ReplyAction="http://tempuri.org/IPizzaService/OrderEntryListResponse")]
+        PizzaClientNew.PizzaReference.OrderEntry[] OrderEntryList(int orderId);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IPizzaService/OrderEntryList", ReplyAction="http://tempuri.org/IPizzaService/OrderEntryListResponse")]
+        System.Threading.Tasks.Task<PizzaClientNew.PizzaReference.OrderEntry[]> OrderEntryListAsync(int orderId);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -591,6 +597,14 @@ namespace PizzaClientNew.PizzaReference {
         
         public System.Threading.Tasks.Task<PizzaClientNew.PizzaReference.Product> GetProductByIdAsync(int productid) {
             return base.Channel.GetProductByIdAsync(productid);
+        }
+        
+        public PizzaClientNew.PizzaReference.OrderEntry[] OrderEntryList(int orderId) {
+            return base.Channel.OrderEntryList(orderId);
+        }
+        
+        public System.Threading.Tasks.Task<PizzaClientNew.PizzaReference.OrderEntry[]> OrderEntryListAsync(int orderId) {
+            return base.Channel.OrderEntryListAsync(orderId);
         }
     }
 }

@@ -61,5 +61,9 @@ namespace PizzaServiceLibrary
             return productmodel.GetProductById(productid);
         }
 
+        public List<OrderEntry> OrderEntryList(int orderId)
+        {
+            return orderentrymodel.OrderEntryList(orderId);
+        }
     }
 }

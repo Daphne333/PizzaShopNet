@@ -25,7 +25,6 @@ namespace PizzaClientNew
         private Order orderObject;
         private double moneyleft;
         private Customer userObject;
-        private OrderEntry orderEntryObject;
         
 
         public Shop(string username)
@@ -57,66 +56,64 @@ namespace PizzaClientNew
 
         private void BuyButton_Click(object sender, RoutedEventArgs e)
         {
+            try
+            {
+                ((ListBoxItem)ProductsBox.SelectedItem).Tag.ToString();
+            }
+            catch
+            {
+                MessageBox.Show("No item was selected");
+                return;
+            }
+
             string productidS = ((ListBoxItem)ProductsBox.SelectedItem).Tag.ToString();
+
             int productid = Int32.Parse(productidS);
             int orderid = orderObject.Id;
             Product productObject = pizzaproxy.GetProductById(productid);
-            if(userObject.Money > productObject.Price)
+
+            OrderEntry oe = pizzaproxy.Buy(orderid, productid, userid);
+            if (oe != null)
             {
-                OrderEntry oe = pizzaproxy.Buy(orderid, productid, userid);
-                ListBoxItem oeitm = new ListBoxItem();
-                oeitm.Tag = productid;
-                oeitm.Content = productObject.Name + ", " + oe.Amount;
-                InventoryBox.Items.Add(oeitm);
+                //Iets maken waardoor als het product al in de lijst met bestelde producten staat het geupdate word ipv alsnog een nieuw listboxitem
+                InventoryBox.Items.Clear();
 
-                //Refresh
-
-                MoneyLeftMessage.Content = "Money left: " + moneyleft.ToString();
-                ProductsBox.Items.Clear();
-
-                foreach (Product p in pizzaproxy.ProductList())
+                foreach (OrderEntry o in pizzaproxy.OrderEntryList(orderid))
                 {
-                    ListBoxItem itm = new ListBoxItem();
-                    itm.Tag = p.Id;
-                    if (p.Amount > 0)
-                    {
-                        itm.Content = p.Name + ": " + p.Price + " euro: " + p.Amount.ToString() + " beschikbaar";
-                        ProductsBox.Items.Add(itm);
-                    }
+                    ListBoxItem oeitm = new ListBoxItem();
+                    oeitm.Content = pizzaproxy.GetProductById(o.Product_Id).Name + ", " + o.Amount;
+                    InventoryBox.Items.Add(oeitm);
                 }
+                
             }
             else
             {
-                MessageBox.Show("Not enough money!");
-
-                //Refresh
-
-                MoneyLeftMessage.Content = "Money left: " + moneyleft.ToString();
-                ProductsBox.Items.Clear();
-
-                foreach (Product p in pizzaproxy.ProductList())
+                if (pizzaproxy.GetCustomerById(userid).Money < pizzaproxy.GetProductById(productid).Price)
                 {
-                    ListBoxItem itm = new ListBoxItem();
-                    itm.Tag = p.Id;
-                    if (p.Amount > 0)
-                    {
-                        itm.Content = p.Name + ": " + p.Price + " euro: " + p.Amount.ToString() + " beschikbaar";
-                        ProductsBox.Items.Add(itm);
-                    }
+                    MessageBox.Show("Not enough money!");
                 }
+                else if (pizzaproxy.GetProductById(productid).Amount <= 0)
+                {
+                    MessageBox.Show("Product out of stock!");
+                }
+                else
+                {
+                    MessageBox.Show("An error has occured!");
+                }
+                
             }
             
-            
+            RefreshButton_Click(sender, e);
+
         }
 
         private void RefreshButton_Click(object sender, RoutedEventArgs e)
         {
-
+            moneyleft = pizzaproxy.GetCustomerById(userid).Money;
             MoneyLeftMessage.Content = "Money left: " + moneyleft.ToString();
             ProductsBox.Items.Clear();
 
-            foreach (Product p in pizzaproxy.ProductList())
-            {
+            foreach (Product p in pizzaproxy.ProductList()) { 
                 ListBoxItem itm = new ListBoxItem();
                 itm.Tag = p.Id;
                 if (p.Amount > 0)

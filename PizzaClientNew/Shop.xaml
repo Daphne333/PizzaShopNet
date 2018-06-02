@@ -5,15 +5,15 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:PizzaClientNew"
         mc:Ignorable="d"
-        Title="Shop" Height="291.25" Width="563.2">
-    <Grid Background="#FFD9B76E">
+        Title="Shop" Height="291.35" Width="598.2">
+    <Grid Background="#FFD9B76E" Margin="0,0,3.6,0.6">
         <Label Content="Inventory" HorizontalAlignment="Left" Margin="50,24,0,0" VerticalAlignment="Top"/>
         <Label Content="Products" HorizontalAlignment="Left" Margin="310,24,0,0" VerticalAlignment="Top"/>
         <Button x:Name="BuyButton" Content="Buy" HorizontalAlignment="Left" Margin="310,225,0,0" VerticalAlignment="Top" Width="75" Click="BuyButton_Click"/>
-        <Button x:Name="RefreshButton" Content="Refresh" HorizontalAlignment="Left" Margin="435,225,0,0" VerticalAlignment="Top" Width="75" Click="RefreshButton_Click"/>
+        <Button x:Name="RefreshButton" Content="Refresh" HorizontalAlignment="Left" Margin="464,225,0,0" VerticalAlignment="Top" Width="75" Click="RefreshButton_Click"/>
         <Label x:Name="MoneyLeftMessage" Content="" HorizontalAlignment="Left" Margin="50,214,0,0" VerticalAlignment="Top"/>
-        <ListBox x:Name="InventoryBox" HorizontalAlignment="Left" Height="145" Margin="50,65,0,0" VerticalAlignment="Top" Width="160"/>
-        <ListBox x:Name="ProductsBox" HorizontalAlignment="Left" Height="145" Margin="310,65,0,0" VerticalAlignment="Top" Width="160"/>
+        <ListBox x:Name="InventoryBox" HorizontalAlignment="Left" Height="145" Margin="50,65,0,0" VerticalAlignment="Top" Width="220"/>
+        <ListBox x:Name="ProductsBox" Height="145" Margin="0,65,50,0" VerticalAlignment="Top" HorizontalAlignment="Right" Width="231"/>
 
     </Grid>
 </Window>

@@ -12,6 +12,8 @@ namespace PizzaDB
         {
             using (PizzaShopDBEntities dbDriver = new PizzaShopDBEntities())
             {
+                dbDriver.Configuration.ProxyCreationEnabled = false;
+
                 OrderEntry orderentry = (from o in dbDriver.OrderEntrySet
                                   where o.OrderId == orderid && o.Product_Id == productid
                                 select o).SingleOrDefault();
@@ -22,29 +24,58 @@ namespace PizzaDB
                                    where p.Id == productid
                                    select p).SingleOrDefault();
 
-                if (orderentry == null) {
-                    OrderEntry oe = new OrderEntry
+                if (cust.Money >= product.Price && product.Amount > 0)
                 {
-                    Amount = 1,
-                    OrderId = orderid,
-                    Product_Id = productid
-                };
-                    dbDriver.OrderEntrySet.Add(oe);
-                    cust.Money = cust.Money - product.Price;
-                    product.Amount -= 1;
-                    dbDriver.SaveChanges();
-                    return oe;
+
+
+                    if (orderentry == null)
+                    {
+                        OrderEntry oe = new OrderEntry
+                        {
+                            Amount = 1,
+                            OrderId = orderid,
+                            Product_Id = productid
+                        };
+                        dbDriver.OrderEntrySet.Add(oe);
+                        cust.Money = cust.Money - product.Price;
+                        product.Amount -= 1;
+                        dbDriver.SaveChanges();
+                        return oe;
+                    }
+                    else
+                    {
+                        orderentry.Amount += 1;
+                        cust.Money = cust.Money - product.Price;
+                        product.Amount -= 1;
+                        dbDriver.SaveChanges();
+                        return orderentry;
+                    }
                 }
                 else
                 {
-                    orderentry.Amount += 1;
-                    cust.Money = cust.Money - product.Price;
-                    product.Amount -= 1;
-                    dbDriver.SaveChanges();
-                    return orderentry;
+                    return null;
                 }
             }
         }
 
+        public List<OrderEntry> OrderEntryList(int orderId)
+        {
+            using (PizzaShopDBEntities dbDriver = new PizzaShopDBEntities())
+            {
+                dbDriver.Configuration.ProxyCreationEnabled = false;
+                List<OrderEntry> orderEntryList = new List<OrderEntry>();
+
+                var orderEntries =
+                    from oe in dbDriver.OrderEntrySet
+                    where oe.OrderId == orderId
+                    select oe;
+
+                foreach (OrderEntry oe in orderEntries)
+                    orderEntryList.Add(oe);
+
+                return orderEntryList;
+
+            }
+        }
     }
 }

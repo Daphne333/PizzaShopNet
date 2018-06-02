@@ -55,6 +55,12 @@
   <wsdl:message name="IPizzaService_GetProductById_OutputMessage">
     <wsdl:part name="parameters" element="tns:GetProductByIdResponse" />
   </wsdl:message>
+  <wsdl:message name="IPizzaService_OrderEntryList_InputMessage">
+    <wsdl:part name="parameters" element="tns:OrderEntryList" />
+  </wsdl:message>
+  <wsdl:message name="IPizzaService_OrderEntryList_OutputMessage">
+    <wsdl:part name="parameters" element="tns:OrderEntryListResponse" />
+  </wsdl:message>
   <wsdl:portType name="IPizzaService">
     <wsdl:operation name="Register">
       <wsdl:input wsaw:Action="http://tempuri.org/IPizzaService/Register" message="tns:IPizzaService_Register_InputMessage" />
@@ -87,6 +93,10 @@
     <wsdl:operation name="GetProductById">
       <wsdl:input wsaw:Action="http://tempuri.org/IPizzaService/GetProductById" message="tns:IPizzaService_GetProductById_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IPizzaService/GetProductByIdResponse" message="tns:IPizzaService_GetProductById_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="OrderEntryList">
+      <wsdl:input wsaw:Action="http://tempuri.org/IPizzaService/OrderEntryList" message="tns:IPizzaService_OrderEntryList_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IPizzaService/OrderEntryListResponse" message="tns:IPizzaService_OrderEntryList_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_IPizzaService" type="tns:IPizzaService">
@@ -156,6 +166,15 @@
     </wsdl:operation>
     <wsdl:operation name="GetProductById">
       <soap:operation soapAction="http://tempuri.org/IPizzaService/GetProductById" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="OrderEntryList">
+      <soap:operation soapAction="http://tempuri.org/IPizzaService/OrderEntryList" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

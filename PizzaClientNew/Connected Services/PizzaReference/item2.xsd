@@ -114,4 +114,18 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
+  <xs:element name="OrderEntryList">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="orderId" type="xs:int" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="OrderEntryListResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q6="http://schemas.datacontract.org/2004/07/PizzaDB" minOccurs="0" name="OrderEntryListResult" nillable="true" type="q6:ArrayOfOrderEntry" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
 </xs:schema>

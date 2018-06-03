@@ -28,7 +28,7 @@ namespace PizzaDB
                     {
                         Username = username,
                         Password = password,
-                        Money = 10
+                        Money = 20
                     };
 
                     dbDriver.CustomerSet.Add(c1);
@@ -48,12 +48,19 @@ namespace PizzaDB
             {
                 return false;
             }
-
+             
             using (PizzaShopDBEntities dbDriver = new PizzaShopDBEntities())
             {
-                Customer c1 = dbDriver.CustomerSet.Single(c => c.Username == username);
-                return c1.Password == password;
-
+                try
+                {
+                    Customer c1 = dbDriver.CustomerSet.Single(c => c.Username == username);
+                    return c1.Password == password;
+                }
+                catch
+                {
+                    return false;
+                }
+                
             }
 
         }

@@ -28,11 +28,6 @@ namespace PizzaClientNew
             InitializeComponent();
         }
 
-        private void UsernameTextBox_TextChanged(object sender, TextChangedEventArgs e)
-        {
-
-        }
-
         private void LoginButton_Click(object sender, RoutedEventArgs e)
         {
             string username = UsernameTextBox.Text;

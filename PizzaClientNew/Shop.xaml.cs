@@ -75,8 +75,7 @@ namespace PizzaClientNew
             OrderEntry oe = pizzaproxy.Buy(orderid, productid, userid);
             if (oe != null)
             {
-                //Iets maken waardoor als het product al in de lijst met bestelde producten staat het geupdate word ipv alsnog een nieuw listboxitem
-                InventoryBox.Items.Clear();
+               InventoryBox.Items.Clear();
 
                 foreach (OrderEntry o in pizzaproxy.OrderEntryList(orderid))
                 {

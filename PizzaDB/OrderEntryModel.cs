@@ -11,12 +11,13 @@ namespace PizzaDB
         public OrderEntry Buy(int orderid, int productid, int custid)
         {
             using (PizzaShopDBEntities dbDriver = new PizzaShopDBEntities())
+
             {
                 dbDriver.Configuration.ProxyCreationEnabled = false;
 
                 OrderEntry orderentry = (from o in dbDriver.OrderEntrySet
-                                  where o.OrderId == orderid && o.Product_Id == productid
-                                select o).SingleOrDefault();
+                                         where o.OrderId == orderid && o.Product_Id == productid
+                                         select o).SingleOrDefault();
                 Customer cust = (from c in dbDriver.CustomerSet
                                  where c.Id == custid
                                  select c).SingleOrDefault();
@@ -24,7 +25,7 @@ namespace PizzaDB
                                    where p.Id == productid
                                    select p).SingleOrDefault();
 
-                if (cust.Money >= product.Price && product.Amount > 0)
+                if (product != null && cust.Money >= product.Price && product.Amount > 0)
                 {
 
 
